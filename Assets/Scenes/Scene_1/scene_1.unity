@@ -202,28 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItems:
-  - name: Egg
-    id: 
-    healthPoint: 
-    description: 
-    value: 0
-    image: {fileID: 0}
-    itemType: 0
-  - name: Frog
-    id: 
-    healthPoint: 
-    description: 
-    value: 0
-    image: {fileID: 0}
-    itemType: 0
-  - name: Apple
-    id: 
-    healthPoint: 
-    description: 
-    value: 0
-    image: {fileID: 0}
-    itemType: 0
-  - name: Banana
+  - name: 456767
     id: 
     healthPoint: 
     description: 
@@ -371,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItem: []
+  db: {fileID: 0}
 --- !u!1 &1842291994
 GameObject:
   m_ObjectHideFlags: 0
