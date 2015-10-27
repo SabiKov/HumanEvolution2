@@ -112,7 +112,8 @@ public class Login_Register : MonoBehaviour {
 		{
 			if (w.text == "login-SUCCESS")
 			{
-				print("WOOOOOOOOOOOOOOO!");
+				print("YOU HAVE SUCCESSFULLY ENTERED THE GAME MANUE");
+				Application.LoadLevel(1);
 			}
 			else
 				message += w.text;
