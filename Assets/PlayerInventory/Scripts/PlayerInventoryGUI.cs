@@ -3,16 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-
-public class PlayerInventoryGUI : MonoBehaviour
-{
-
+public class PlayerInventoryGUI : MonoBehaviour {
     /// <summary>
     /// Create variables for declaring inventory bag's size
     /// </summary>
     private RectTransform inventoryGUIRect;
     private float invWidth, invHeight;
+
+    /// <summary>
+    /// Adding open/close functionalities to inventory bag
+    /// </summary>
+    public CanvasGroup canvas;
+    public EventSystem eventSystem;
+    private bool open;
+
 
     /// <summary>
     /// Create public variables which can be set via UI 
@@ -38,6 +44,7 @@ public class PlayerInventoryGUI : MonoBehaviour
     /// </summary>
     private List<GameObject> allSlots = new List<GameObject>();
 
+
     // Use this for initialization
     void Start() {
         BuildInventoryBag();
@@ -46,8 +53,11 @@ public class PlayerInventoryGUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.I)) {
+            OpenCloseInventory();
+        }
+
         //     DisplayLivesLeft();
         //     DisplayHealthLeft();
     }
@@ -100,83 +110,100 @@ public class PlayerInventoryGUI : MonoBehaviour
 
         }
     } // BuildInventoryBag
-      /*
-          /// <summary>
-          /// These are final variables thus values are not constant  
-          /// MAX_HEALTH represents player's total health which is 100 points
-          /// MAX_LIVE represent player's total lives during the game
-          /// </summary>
-          const int MAX_HEALTH = 100;
-          const int MAX_LIVE = 3;
+    /// <summary>
+    /// Open and Close Function of the inventory
+    /// </summary>
+    /// <returns></returns>
+    private void OpenCloseInventory() {
 
-          /// <summary>
-          /// Variables hold four images of the player lives. 
-          /// </summary>
-          public Texture2D lives3;
-          public Texture2D lives2;
-          public Texture2D lives1;
-          public Texture2D lives0;
-          private int loseLive = 0;
+        if (canvas.alpha > 0){
 
-          /// <summary>
-          /// Variables hold images of the player's health bar
-          /// </summary>
-          public Texture2D healthBar00;
-          public Texture2D healthBar20;
-          public Texture2D healthBar40;
-          public Texture2D healthBar60;
-          public Texture2D healthBar80;
-          public Texture2D healthBar100;
-
-          private Player player;
+            Debug.Log("Canvas Close");
+            canvas.alpha = 0;
+        } else {
+            Debug.Log("Canvas display");
+            canvas.alpha = 1;
+        }
+    }
 
 
+    /*
+        /// <summary>
+        /// These are final variables thus values are not constant  
+        /// MAX_HEALTH represents player's total health which is 100 points
+        /// MAX_LIVE represent player's total lives during the game
+        /// </summary>
+        const int MAX_HEALTH = 100;
+        const int MAX_LIVE = 3;
 
-          /// <summary>
-          /// Method displays the current player's lives 
-          /// </summary>
-          private void DisplayLivesLeft() {
-              int livesLeft = player.GetLivesLeft();
-              GUI.Box(new Rect(100, 5, 200, 40), LivesImage(livesLeft));
-          }
+        /// <summary>
+        /// Variables hold four images of the player lives. 
+        /// </summary>
+        public Texture2D lives3;
+        public Texture2D lives2;
+        public Texture2D lives1;
+        public Texture2D lives0;
+        private int loseLive = 0;
 
-          /// <summary>
-          /// Method displays the current player's health level
-          /// </summary>
-          private void DisplayHealthLeft()
-          {
-              int healthLeft = player.GetHealthLeft();
-              GUI.Box(new Rect(305, 5, 200, 40), HealthBarImage(healthLeft));
-          }
+        /// <summary>
+        /// Variables hold images of the player's health bar
+        /// </summary>
+        public Texture2D healthBar00;
+        public Texture2D healthBar20;
+        public Texture2D healthBar40;
+        public Texture2D healthBar60;
+        public Texture2D healthBar80;
+        public Texture2D healthBar100;
 
-          /// <summary>
-          /// Method returns an appropriate image of live  
-          /// </summary>
-          private Texture2D LivesImage(int live) {
-              if (live == 3) { return lives3; }
+        private Player player;
 
-              else if (live == 2) { return lives2; }
 
-              else if (live == 1) {  return lives1; }
 
-              else { return lives0; }
-          }
+        /// <summary>
+        /// Method displays the current player's lives 
+        /// </summary>
+        private void DisplayLivesLeft() {
+            int livesLeft = player.GetLivesLeft();
+            GUI.Box(new Rect(100, 5, 200, 40), LivesImage(livesLeft));
+        }
 
-          /// <summary>
-          /// Method returns image of the health bar 
-          /// </summary>
-          private Texture2D HealthBarImage(int health) {
-              if (health == 100) { return healthBar100; }
+        /// <summary>
+        /// Method displays the current player's health level
+        /// </summary>
+        private void DisplayHealthLeft()
+        {
+            int healthLeft = player.GetHealthLeft();
+            GUI.Box(new Rect(305, 5, 200, 40), HealthBarImage(healthLeft));
+        }
 
-              else if (health == 80) { return healthBar80; }
+        /// <summary>
+        /// Method returns an appropriate image of live  
+        /// </summary>
+        private Texture2D LivesImage(int live) {
+            if (live == 3) { return lives3; }
 
-              else if (health == 60) { return healthBar60; }
+            else if (live == 2) { return lives2; }
 
-              else if (health == 40) { return healthBar40; }
+            else if (live == 1) {  return lives1; }
 
-              else if (health == 20) { return healthBar20; }
+            else { return lives0; }
+        }
 
-              else { return healthBar00; }
-          }
-      */
+        /// <summary>
+        /// Method returns image of the health bar 
+        /// </summary>
+        private Texture2D HealthBarImage(int health) {
+            if (health == 100) { return healthBar100; }
+
+            else if (health == 80) { return healthBar80; }
+
+            else if (health == 60) { return healthBar60; }
+
+            else if (health == 40) { return healthBar40; }
+
+            else if (health == 20) { return healthBar20; }
+
+            else { return healthBar00; }
+        }
+    */
 }
