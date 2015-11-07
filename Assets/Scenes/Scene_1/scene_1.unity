@@ -272,7 +272,11 @@ Transform:
   m_LocalPosition: {x: 216.012161, y: -197.73674, z: -583.842224}
 =======
   m_LocalPosition: {x: 480.055603, y: -276.475067, z: -1709.15637}
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 98f9ac74bcdc5b45facfd3bcbaf32f3e32c13694
+>>>>>>> 5faa30d6c5e1dde8e46f24d3c7fd777e80424c5e
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1080,7 +1084,11 @@ Transform:
   m_LocalPosition: {x: 228.724503, y: -202.530563, z: -580.408447}
 =======
   m_LocalPosition: {x: 495.000092, y: -282.767639, z: -1705.09058}
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 98f9ac74bcdc5b45facfd3bcbaf32f3e32c13694
+>>>>>>> 5faa30d6c5e1dde8e46f24d3c7fd777e80424c5e
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1476,7 +1484,11 @@ Transform:
   m_LocalPosition: {x: 211.29364, y: -190.936676, z: -586.432007}
 =======
   m_LocalPosition: {x: 474.185638, y: -261.332428, z: -1712.56824}
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 98f9ac74bcdc5b45facfd3bcbaf32f3e32c13694
+>>>>>>> 5faa30d6c5e1dde8e46f24d3c7fd777e80424c5e
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
