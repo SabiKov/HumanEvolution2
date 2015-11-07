@@ -85,15 +85,15 @@ public class PlayerInventoryGUI : MonoBehaviour {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 // Create extra slots within the inventory bag by instantiating the slot prefab 
-                GameObject extraSlot = (GameObject)Instantiate(prefabSlot);
+                GameObject generateSlot = (GameObject)Instantiate(prefabSlot);
 
                 //Create a rectangular shape for the slot
-                RectTransform slotRect = extraSlot.GetComponent<RectTransform>();
+                RectTransform slotRect = generateSlot.GetComponent<RectTransform>();
 
                 // rename the extraSlot
-                extraSlot.name = "Slot";
+                generateSlot.name = "Slot";
                 /// set the canvas element as a parent of the dynamically build slots
-                extraSlot.transform.SetParent(this.transform.parent);
+                generateSlot.transform.SetParent(this.transform.parent);
 
                 /// Calculate the x and y position of slot by adding width and height of slot
                 float xAxis = leftSpace * (j + 1) + (slotSizeWidth * j) + (slotSizeWidth / 2);
@@ -105,7 +105,8 @@ public class PlayerInventoryGUI : MonoBehaviour {
                 slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotSizeWidth);
                 slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotSizeHeight);
 
-                allSlots.Add(extraSlot);
+                // added newly generate slot to the array list data structure
+                allSlots.Add(generateSlot);
             }
 
         }
