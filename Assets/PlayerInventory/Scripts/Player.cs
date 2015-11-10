@@ -2,6 +2,40 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+
+    /// <summary>
+    /// Initialize inventoryBag so the player able to store item into a bag.
+    /// </summary>
+    public PlayerInventoryGUI inventoryBag;
+
+
+    /// <summary>
+    /// Method to detect when the player collides with enemy.
+    /// If the player is hit the player's health will be reduced. 
+    /// When the health level is equals zero one lives will be reduced.
+    /// If the lives is equals zero the game over scene will be loaded.
+    /// </summary>
+    private void OnTriggerEnter(Collider someItem) {
+
+        string tag = someItem.tag;
+
+        /// tag need to be added to each item which can be placed into inventory system
+        if (tag == "InventoryItem") {
+            inventoryBag.AddItem(someItem.GetComponent<PlayerInventoryItem>());
+        }
+
+        /*
+        if (tag == "DeadlyDose") {
+            livesLeft--;
+            MoveStartPosition();
+            healthLeft = MAX_HEALTH;
+        }
+        if (livesLeft == 0 && livesLeft < 20) {
+          //  Application.LoadLevel("scene_game_over");
+        } 
+    } */
+    }
+
     /*
     /// <summary>
     /// Variables hold the maximum health and the current health
@@ -35,29 +69,18 @@ public class Player : MonoBehaviour {
         Vector3 startPosition = new Vector3(143, 1, 57);
         transform.position = startPosition;
     }
-    /// <summary>
-    /// Method to detect when the player collides with enemy.
-    /// If the player is hit the player's health will be reduced. 
-    /// When the health level is equals zero one lives will be reduced.
-    /// If the lives is equals zero the game over scene will be loaded.
-    /// </summary>
-    private void OnTriggerEnter(Collider someItem) {
-
-        string tag = someItem.tag;
-
-        if (tag == "InventoryItem") {
-
-    //        bag.AddItem(someItem.GetComponent<InventoryItem>());
-        }
-
-        if (tag == "DeadlyDose") {
-            livesLeft--;
-            MoveStartPosition();
-            healthLeft = MAX_HEALTH;
-        }
-        if (livesLeft == 0 && livesLeft < 20) {
-          //  Application.LoadLevel("scene_game_over");
-        }
-    }
     */
+
+
+    /*
+            if (tag == "DeadlyDose") {
+                livesLeft--;
+                MoveStartPosition();
+                healthLeft = MAX_HEALTH;
+            }
+            if (livesLeft == 0 && livesLeft < 20) {
+              //  Application.LoadLevel("scene_game_over");
+            } 
+        } */
+
 }

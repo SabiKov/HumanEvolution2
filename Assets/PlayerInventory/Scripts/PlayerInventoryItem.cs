@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerInventoryItem : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class PlayerInventoryItem : MonoBehaviour {
     public Sprite spriteNeutral;
     public Sprite spriteHighlighted;
 
-    private int stockSize = 1;
+    public int stockSize = 1;
 
     /// <summary>
     /// Access "Enumeration" ItemType
@@ -62,9 +63,7 @@ public class PlayerInventoryItem : MonoBehaviour {
     /// Enumeration value data type which has a set of named integer constant.
     /// This provides a list of different item type a form of drop down menu on UI. 
     /// </summary>
-    public enum ItemType
-    {
-        None,
+    public enum ItemType {
         Health,
         Chapter1,
         Chapter2,

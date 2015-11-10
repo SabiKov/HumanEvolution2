@@ -11,6 +11,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// </summary>
     private RectTransform inventoryGUIRect;
     private float invWidth, invHeight;
+    private static int emptySlots;
 
     /// <summary>
     /// Adding open/close functionalities to inventory bag
@@ -18,7 +19,6 @@ public class PlayerInventoryGUI : MonoBehaviour {
     public CanvasGroup canvas;
     public EventSystem eventSystem;
     private bool open;
-
 
     /// <summary>
     /// Create public variables which can be set via UI 
@@ -44,6 +44,14 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// </summary>
     private List<GameObject> allSlots = new List<GameObject>();
 
+    /// <summary>
+    /// Method allows to access the emptySlot private variable from other class 
+    /// </summary>
+    public static int EmptySlots {
+        get { return emptySlots; }
+
+        set { emptySlots = value; }
+    }
 
     // Use this for initialization
     void Start() {
@@ -62,13 +70,11 @@ public class PlayerInventoryGUI : MonoBehaviour {
         //     DisplayHealthLeft();
     }
 
-    private void BuildInventoryBag()
-    {
+    private void BuildInventoryBag() {
         // Calculate the total slots of the inventory bag
         slots = rows * columns;
-  //      EmptySlots = slots;
+        emptySlots = slots;
 
-  //      hoverYOffSet = (slotSizeHeight * slotSizeWidth) * 0.01f;
         /// <summary>
         /// Calculate the size of the inventory bag based on number of slots + their width and height
         /// </summary>
@@ -116,9 +122,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// </summary>
     /// <returns></returns>
     private void OpenCloseInventory() {
-
-        if (canvas.alpha > 0){
-
+        if (canvas.alpha > 0) {
             Debug.Log("Canvas Close");
             canvas.alpha = 0;
         } else {
@@ -126,8 +130,61 @@ public class PlayerInventoryGUI : MonoBehaviour {
             canvas.alpha = 1;
         }
     }
+    /// <summary>
+    /// Adding item to empty slot, the method return true if item can be added into an empty slot
+    /// otherwise return false which means the slot is occupied by another item. 
+    /// </summary>
+    /// <param name="item">passing an item form PlayerInventory class</param>
+    /// <returns></returns>
+    public bool AddItem(PlayerInventoryItem item) {
+        if (item.stockSize == 1) {
+            AddItemInEmptySlot(item);
+            return true;
+        }
+        return false;
+    }
+    /// <summary>
+    /// Add item to empty slot
+    /// </summary>
+    /// <param name="itemStock"></param>
+    /// <returns></returns>
+    private bool AddItemInEmptySlot(PlayerInventoryItem itemStock) {
+        ///Check available empty slot in the bag
+        if (emptySlots > 0) {
+            /// Looping through the inventory bag to count number of empty slots.
+            foreach (GameObject slot in allSlots) {
+                PlayerInventorySlot tmpSlot = slot.GetComponent<PlayerInventorySlot>();
+                ///if the temporary slot is empty,item will added and remove 
+                if (tmpSlot.IsEmpty) {
+                    tmpSlot.AddItem(itemStock);
+                    emptySlots--;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+/*
+    /// <summary>
+    /// Saving all item from inventory system
+    /// </summary>
+    public void SaveInventoryItem() {
 
+        for (int i = 0; i < allSlots.Count; i++) {
 
+            /// Store each slot item into a variable, called "tmpSlot"  
+
+            PlayerInventorySlot tmpSlot = allSlots[i].GetComponent<PlayerInventorySlot>();
+
+            if (!tmpSlot.IsEmpty) {
+
+                ContentSizeFitter == i + "," + tmpSlot.Se; 
+
+            }
+        }
+    }
+    */
+}
     /*
         /// <summary>
         /// These are final variables thus values are not constant  
@@ -207,4 +264,3 @@ public class PlayerInventoryGUI : MonoBehaviour {
             else { return healthBar00; }
         }
     */
-}
