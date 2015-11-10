@@ -14,7 +14,12 @@ using UnityEngine.EventSystems;
 ///  
 /// </summary>
 public class PlayerInventoryGUI : MonoBehaviour {
-     
+
+    /// <summary>
+    /// Instantiate the player class
+    /// </summary>
+    private Player player;
+
     /// <summary>
     /// Create variables for declaring inventory bag's size
     /// </summary>
@@ -37,16 +42,14 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// rightSpace: add "right" distance between slots
     /// prefab: add slot prefab
     /// </summary>
+    public GameObject prefabSlot;
     public int columns;
     public int rows;
-    private int slots;
-    public GameObject prefabSlot;
-    public float leftSpace;
-    public float rigthSpace;
-    public float topSpace;
-    public float bottomSpace;
     public float slotSizeWidth;
     public float slotSizeHeight;
+    private int slots;
+    private float leftSpace = 5;
+    private float topSpace = 5;
 
     /// <summary>
     /// Create a array list to store all inventory bag's slots as a game object
@@ -77,9 +80,11 @@ public class PlayerInventoryGUI : MonoBehaviour {
             OpenCloseInventory();
         }
         //     DisplayLivesLeft();
-        //     DisplayHealthLeft();
     }
 
+    /// <summary>
+    /// Create a layout of the inventory bag, based on the custom parameters
+    /// </summary>
     private void BuildInventoryBag() {
         // Calculate the total slots of the inventory bag
         slots = rows * columns;
@@ -132,10 +137,8 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// Open and Close Function of the inventory
     /// </summary>
     /// <returns></returns>
-    private void OpenCloseInventory()
-    {
-        if (canvas.alpha > 0)
-        {
+    private void OpenCloseInventory() {
+        if (canvas.alpha > 0) {
             Debug.Log("Canvas Close");
             canvas.alpha = 0;
         }
@@ -145,17 +148,14 @@ public class PlayerInventoryGUI : MonoBehaviour {
             canvas.alpha = 1;
         }
     }
-    /*
     /// <summary>
     /// Adding item to empty slot, the method return true if item can be added into an empty slot
     /// otherwise return false which means the slot is occupied by another item. 
     /// </summary>
     /// <param name="item">passing an item form PlayerInventory class</param>
     /// <returns></returns>
-    public bool AddItem(PlayerInventoryItem item)
-    {
-        if (item.stockSize == 1)
-        {
+    public bool AddItem(PlayerInventoryItem item) {
+        if (item.stockSize == 1) {
             AddItemInEmptySlot(item);
             return true;
         }
@@ -166,18 +166,14 @@ public class PlayerInventoryGUI : MonoBehaviour {
     /// </summary>
     /// <param name="itemStock"></param>
     /// <returns></returns>
-    private bool AddItemInEmptySlot(PlayerInventoryItem itemStock)
-    {
+    private bool AddItemInEmptySlot(PlayerInventoryItem itemStock) {
         ///Check available empty slot in the bag
-        if (emptySlots > 0)
-        {
+        if (emptySlots > 0) {
             /// Looping through the inventory bag to count number of empty slots.
-            foreach (GameObject slot in allSlots)
-            {
+            foreach (GameObject slot in allSlots) {
                 PlayerInventorySlot tmpSlot = slot.GetComponent<PlayerInventorySlot>();
                 ///if the temporary slot is empty,item will added and remove 
-                if (tmpSlot.IsEmpty)
-                {
+                if (tmpSlot.IsEmpty) {
                     tmpSlot.AddItem(itemStock);
                     emptySlots--;
                     return true;
@@ -185,7 +181,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
             }
         }
         return false;
-    } */
+    } 
     /*
         /// <summary>
         /// Saving all item from inventory system
@@ -225,17 +221,9 @@ public class PlayerInventoryGUI : MonoBehaviour {
     public Texture2D lives0;
     private int loseLive = 0;
 
-    /// <summary>
-    /// Variables hold images of the player's health bar
-    /// </summary>
-    public Texture2D healthBar00;
-    public Texture2D healthBar20;
-    public Texture2D healthBar40;
-    public Texture2D healthBar60;
-    public Texture2D healthBar80;
-    public Texture2D healthBar100;
 
-    private Player player;
+
+    
 
 
 
@@ -247,14 +235,6 @@ public class PlayerInventoryGUI : MonoBehaviour {
         GUI.Box(new Rect(100, 5, 200, 40), LivesImage(livesLeft));
     }
 
-    /// <summary>
-    /// Method displays the current player's health level
-    /// </summary>
-    private void DisplayHealthLeft()
-    {
-        int healthLeft = player.GetHealthLeft();
-        GUI.Box(new Rect(305, 5, 200, 40), HealthBarImage(healthLeft));
-    }
 
     /// <summary>
     /// Method returns an appropriate image of live  
@@ -267,22 +247,5 @@ public class PlayerInventoryGUI : MonoBehaviour {
         else if (live == 1) {  return lives1; }
 
         else { return lives0; }
-    }
-
-    /// <summary>
-    /// Method returns image of the health bar 
-    /// </summary>
-    private Texture2D HealthBarImage(int health) {
-        if (health == 100) { return healthBar100; }
-
-        else if (health == 80) { return healthBar80; }
-
-        else if (health == 60) { return healthBar60; }
-
-        else if (health == 40) { return healthBar40; }
-
-        else if (health == 20) { return healthBar20; }
-
-        else { return healthBar00; }
     }
 */
