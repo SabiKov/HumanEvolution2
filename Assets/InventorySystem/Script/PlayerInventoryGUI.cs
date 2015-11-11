@@ -16,11 +16,6 @@ using UnityEngine.EventSystems;
 public class PlayerInventoryGUI : MonoBehaviour {
 
     /// <summary>
-    /// Instantiate the player class
-    /// </summary>
-    private Player player;
-
-    /// <summary>
     /// Create variables for declaring inventory bag's size
     /// </summary>
     private RectTransform inventoryGUIRect;
@@ -71,6 +66,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+
         BuildInventoryBag();
     }
 
@@ -203,49 +199,3 @@ public class PlayerInventoryGUI : MonoBehaviour {
         }
         */
 }
-/*
-    /// <summary>
-    /// These are final variables thus values are not constant  
-    /// MAX_HEALTH represents player's total health which is 100 points
-    /// MAX_LIVE represent player's total lives during the game
-    /// </summary>
-    const int MAX_HEALTH = 100;
-    const int MAX_LIVE = 3;
-
-    /// <summary>
-    /// Variables hold four images of the player lives. 
-    /// </summary>
-    public Texture2D lives3;
-    public Texture2D lives2;
-    public Texture2D lives1;
-    public Texture2D lives0;
-    private int loseLive = 0;
-
-
-
-    
-
-
-
-    /// <summary>
-    /// Method displays the current player's lives 
-    /// </summary>
-    private void DisplayLivesLeft() {
-        int livesLeft = player.GetLivesLeft();
-        GUI.Box(new Rect(100, 5, 200, 40), LivesImage(livesLeft));
-    }
-
-
-    /// <summary>
-    /// Method returns an appropriate image of live  
-    /// </summary>
-    private Texture2D LivesImage(int live) {
-        if (live == 3) { return lives3; }
-
-        else if (live == 2) { return lives2; }
-
-        else if (live == 1) {  return lives1; }
-
-        else { return lives0; }
-    }
-*/
