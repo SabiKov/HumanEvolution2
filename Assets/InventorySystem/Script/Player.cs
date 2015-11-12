@@ -38,13 +38,22 @@ public class Player : MonoBehaviour {
 
         if (tag == "DeadlyDamage") {
             
-            healthLeft = -100;
-            GetHealthLeft();
+            healthLeft -= 20;
+            Debug.Log("Player class Deadly damage : " + healthLeft);
+  //          GetHealthLeft();
         }
         if (tag == "SmallDamage") {
 
-            healthLeft = -20;
-            GetHealthLeft();
+            healthLeft -= 20;
+            Debug.Log("Player class Deadly damage : " + healthLeft);
+ //           GetHealthLeft();
         }
+    }
+
+    public void UsedHealthPack(int health) {
+
+        Debug.Log("Player class healthUp : " + health);
+        int healthUp = health;
+        healthLeft += healthUp;
     }
 }

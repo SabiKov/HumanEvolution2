@@ -12,6 +12,7 @@ public class PlayerHealthGUI : MonoBehaviour {
     private PlayerInventoryItem playerInventoryItem;
 
     const int MAX_HEALTH = 100;
+    int healthLeft;
     /**
 * Variables hold images of the health bar
 */
@@ -33,15 +34,25 @@ public class PlayerHealthGUI : MonoBehaviour {
         playerInventoryItem = GetComponent<PlayerInventoryItem>();
     }
 
+    void Update() {
+
+    }
+
     /**
  *Method displays the current player's health level
  */
     private void DisplayHealtLeft() {
-        int healthLeft = player.GetHealthLeft();
-  //      healthLeft = playerInventoryItem.GetHealthAdd();
+   //     healthLeft = playerInventoryItem.GetHealthAdd();
+        healthLeft = player.GetHealthLeft();
+  //      Debug.Log("PlayerHealthGUI Deadly damage : " + healthLeft);
         GUI.Box(new Rect(305, 5, 200, 40), HealthBarImage(healthLeft));
     }
-
+/*
+    private void AddHealth() {
+        int healthAdd = playerInventoryItem.GetHealthAdd();
+        healthLeft += healthAdd;
+    }
+    */
     /**
 * Method returns image of the health bar 
 *
