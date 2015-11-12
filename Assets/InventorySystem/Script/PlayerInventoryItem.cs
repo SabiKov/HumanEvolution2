@@ -18,14 +18,22 @@ public class PlayerInventoryItem : MonoBehaviour {
     /// </summary>
     public ItemType itemType;
 
+    private int healthAdd = 0;
+    /// <summary>
+    /// Get method to return the current health level, and number of lives.
+    /// </summary>
+    public int GetHealthAdd() { return healthAdd; }
+
     /// <summary>
     /// Method selects the corresponding item type
     /// </summary>
     public void SelectItemType() {
 
         if (itemType == ItemType.Health) {
-            Debug.Log("I reload 10% of health");
-            print("I reload 10% of health");
+            Debug.Log("I reload 20% of health");
+            healthAdd += 20;
+            GetHealthAdd();
+            Debug.Log("PlayerInventory Item class I reload 20% of health");
         }
         else if (itemType == ItemType.Chapter1) {
             Debug.Log("I pick up PAGE/BOOK item");
@@ -68,4 +76,8 @@ public class PlayerInventoryItem : MonoBehaviour {
         Badge,
         Special
     };
+
+    public void HealthLevel() {
+
+    }
 }
