@@ -16,12 +16,12 @@ public class Player : MonoBehaviour {
 
     const int MAX_HEALTH = 100;
     private int healthLeft = MAX_HEALTH;
-    
+
     /// <summary>
     /// Get method to return the current health level, and number of lives.
     /// </summary>
     public int GetHealthLeft() { return healthLeft; }
-    
+
     /// <summary>
     /// If the player is hit the player's health will be reduced. 
     /// When the health level is equals zero one lives will be reduced.
@@ -50,10 +50,7 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void UsedHealthPack(int health) {
-
-        Debug.Log("Player class healthUp : " + health);
-        int healthUp = health;
-        healthLeft += healthUp;
+    public void UsedHealthPack() {
+        
     }
 }

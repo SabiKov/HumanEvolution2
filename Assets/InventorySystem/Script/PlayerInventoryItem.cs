@@ -12,13 +12,13 @@ public class PlayerInventoryItem : MonoBehaviour {
     public Sprite spriteHighlighted;
     public int stockSize = 1;
 
-    private int healthAdd;
+    const int MAX_HEALTH = 100;
 
     private Player player;
 
     void Start() {
 
-  //      player = GetComponent<Player>();
+         player = GetComponent<Player>();
     }
 
     /// <summary>
@@ -28,20 +28,12 @@ public class PlayerInventoryItem : MonoBehaviour {
 
 
     /// <summary>
-    /// Get method to return the current health level, and number of lives.
-    /// </summary>
-    public int GetHealthAdd() {
-        return healthAdd;
-    }
-
-    /// <summary>
     /// Method selects the corresponding item type
     /// </summary>
     public void SelectItemType() {
 
         if (itemType == ItemType.Health) {
-            healthAdd = 0;
-            healthAdd += 20;
+            int healthAdd = +20;
             Debug.Log("I reload 20% of health "+ healthAdd);
         }
         else if (itemType == ItemType.Chapter1) {
