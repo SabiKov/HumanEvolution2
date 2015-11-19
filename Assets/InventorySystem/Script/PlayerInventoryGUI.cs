@@ -99,10 +99,8 @@ public class PlayerInventoryGUI : MonoBehaviour {
 
         /// Nested forLoop going to add slots into inventory bag.
         /// X and Y positions are calculated based on the slot's width, height, "spaces" parameters
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 // Create extra slots within the inventory bag by instantiating the slot prefab 
                 GameObject generateSlot = (GameObject)Instantiate(prefabSlot);
 
@@ -138,8 +136,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
             Debug.Log("Canvas Close");
             canvas.alpha = 0;
         }
-        else
-        {
+        else {
             Debug.Log("Canvas display");
             canvas.alpha = 1;
         }
@@ -178,24 +175,4 @@ public class PlayerInventoryGUI : MonoBehaviour {
         }
         return false;
     } 
-    /*
-        /// <summary>
-        /// Saving all item from inventory system
-        /// </summary>
-        public void SaveInventoryItem() {
-
-            for (int i = 0; i < allSlots.Count; i++) {
-
-                /// Store each slot item into a variable, called "tmpSlot"  
-
-                PlayerInventorySlot tmpSlot = allSlots[i].GetComponent<PlayerInventorySlot>();
-
-                if (!tmpSlot.IsEmpty) {
-
-                    ContentSizeFitter == i + "," + tmpSlot.Se; 
-
-                }
-            }
-        }
-        */
 }

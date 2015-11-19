@@ -7,16 +7,27 @@ public class PlayerInventoryItem : MonoBehaviour {
     /// <summary>
     /// Create two slots for sprites. 
     /// spriteIcon: placeholder for normal sprite of item
-    /// spriteHoverEffect: placeholder for highlighting selected icon in the inventory bag 
     /// </summary>
     public Sprite spriteNeutral;
     public Sprite spriteHighlighted;
     public int stockSize = 1;
 
+    const int RELOAD_HEALTH = 0;
+
+    private Player player;
+
+    private int healthLeft;
+
+    void Start() {
+
+         player = GetComponent<Player>();
+    }
+
     /// <summary>
     /// Access "Enumeration" ItemType
     /// </summary>
     public ItemType itemType;
+
 
     /// <summary>
     /// Method selects the corresponding item type
@@ -24,8 +35,15 @@ public class PlayerInventoryItem : MonoBehaviour {
     public void SelectItemType() {
 
         if (itemType == ItemType.Health) {
-            Debug.Log("I reload 10% of health");
-            print("I reload 10% of health");
+            healthLeft = Player.GetHealthLeft();
+            if (healthLeft <= 80) {
+                Player.UsedHealthPack(20);
+                //     healthReload = healthAdd;
+                Debug.Log("I reload +20% of health ");
+            }
+            else {
+                Debug.Log("Health is on 100% ");
+            }
         }
         else if (itemType == ItemType.Chapter1) {
             Debug.Log("I pick up PAGE/BOOK item");
@@ -68,4 +86,9 @@ public class PlayerInventoryItem : MonoBehaviour {
         Badge,
         Special
     };
+
+    public static void Reload20PerCentHealth() {
+
+    }
+
 }

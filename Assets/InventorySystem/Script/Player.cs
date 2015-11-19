@@ -8,20 +8,21 @@ public class Player : MonoBehaviour {
     /// </summary>
     public PlayerInventoryGUI inventoryBag;
 
+    private PlayerInventoryItem playerInventoryItem;
+    
     /// <summary>
     /// Variables hold the maximum health and the current health
     /// </summary>
 
     const int MAX_HEALTH = 100;
-    private int healthLeft = MAX_HEALTH;
-    
+    private static int healthLeft = MAX_HEALTH;
+
     /// <summary>
     /// Get method to return the current health level, and number of lives.
     /// </summary>
-    public int GetHealthLeft() { return healthLeft; }
+    public static int GetHealthLeft() { return healthLeft; }
 
     /// <summary>
-    /// Method to detect when the player collides with enemy.
     /// If the player is hit the player's health will be reduced. 
     /// When the health level is equals zero one lives will be reduced.
     /// If the lives is equals zero the game over scene will be loaded.
@@ -35,51 +36,24 @@ public class Player : MonoBehaviour {
            inventoryBag.AddItem(item.GetComponent<PlayerInventoryItem>());
         }
 
-        /*
-        if (tag == "DeadlyDose") {
-            livesLeft--;
-            MoveStartPosition();
-            healthLeft = MAX_HEALTH;
+        if (tag == "DeadlyDamage") {
+            
+            healthLeft -= 20;
+            Debug.Log("Player class Deadly damage : " + healthLeft);
+  //          GetHealthLeft();
         }
-        if (livesLeft == 0 && livesLeft < 20) {
-          //  Application.LoadLevel("scene_game_over");
-        } 
-    } */
+        if (tag == "SmallDamage") {
+
+            healthLeft -= 20;
+            Debug.Log("Player class Deadly damage : " + healthLeft);
+ //           GetHealthLeft();
+        }
     }
 
-    /*
-    /// <summary>
-    /// Variables hold player's maximum lives and current lives
-    /// </summary>
-    const int MAX_LIVES = 3;
-    private int livesLeft = MAX_LIVES;
+    public static void UsedHealthPack(int addHealth) {
 
-    public int GetLivesLeft() { return livesLeft; }
-
-    // Use this for initialization
-    void Start() {
+        if (healthLeft < MAX_HEALTH) {
+            healthLeft += addHealth;
+        }
     }
-
-    // Update is called once per frame
-    void Update() {
-    }
-
-    private void MoveStartPosition() {
-        Vector3 startPosition = new Vector3(143, 1, 57);
-        transform.position = startPosition;
-    }
-    */
-
-
-    /*
-            if (tag == "DeadlyDose") {
-                livesLeft--;
-                MoveStartPosition();
-                healthLeft = MAX_HEALTH;
-            }
-            if (livesLeft == 0 && livesLeft < 20) {
-              //  Application.LoadLevel("scene_game_over");
-            } 
-        } */
-
 }
