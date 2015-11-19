@@ -12,9 +12,11 @@ public class PlayerInventoryItem : MonoBehaviour {
     public Sprite spriteHighlighted;
     public int stockSize = 1;
 
-    const int MAX_HEALTH = 100;
+    const int RELOAD_HEALTH = 0;
 
     private Player player;
+
+    private int healthLeft;
 
     void Start() {
 
@@ -33,8 +35,15 @@ public class PlayerInventoryItem : MonoBehaviour {
     public void SelectItemType() {
 
         if (itemType == ItemType.Health) {
-            int healthAdd = +20;
-            Debug.Log("I reload 20% of health "+ healthAdd);
+            healthLeft = Player.GetHealthLeft();
+            if (healthLeft <= 80) {
+                Player.UsedHealthPack(20);
+                //     healthReload = healthAdd;
+                Debug.Log("I reload +20% of health ");
+            }
+            else {
+                Debug.Log("Health is on 100% ");
+            }
         }
         else if (itemType == ItemType.Chapter1) {
             Debug.Log("I pick up PAGE/BOOK item");
@@ -77,5 +86,9 @@ public class PlayerInventoryItem : MonoBehaviour {
         Badge,
         Special
     };
+
+    public static void Reload20PerCentHealth() {
+
+    }
 
 }

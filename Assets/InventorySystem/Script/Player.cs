@@ -15,12 +15,12 @@ public class Player : MonoBehaviour {
     /// </summary>
 
     const int MAX_HEALTH = 100;
-    private int healthLeft = MAX_HEALTH;
+    private static int healthLeft = MAX_HEALTH;
 
     /// <summary>
     /// Get method to return the current health level, and number of lives.
     /// </summary>
-    public int GetHealthLeft() { return healthLeft; }
+    public static int GetHealthLeft() { return healthLeft; }
 
     /// <summary>
     /// If the player is hit the player's health will be reduced. 
@@ -50,7 +50,10 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void UsedHealthPack() {
-        
+    public static void UsedHealthPack(int addHealth) {
+
+        if (healthLeft < MAX_HEALTH) {
+            healthLeft += addHealth;
+        }
     }
 }

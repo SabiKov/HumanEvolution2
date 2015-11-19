@@ -40,7 +40,7 @@ public class PlayerHealthGUI : MonoBehaviour {
  */
     private void DisplayHealtLeft() {
    //     healthAdd = playerInventoryItem.GetHealthAdd();
-        healthLeft = player.GetHealthLeft();
+        healthLeft = Player.GetHealthLeft();
   //      Debug.Log("PlayerHealthGUI Deadly damage : " + healthLeft);
         GUI.Box(new Rect(305, 5, 200, 40), HealthBarImage(healthLeft));
     }
