@@ -17,10 +17,18 @@ public class Player : MonoBehaviour {
     const int MAX_HEALTH = 100;
     private static int healthLeft = MAX_HEALTH;
 
+    const int INI_SCORE = 0;
+    private static int scoreAdd = INI_SCORE;
+
     /// <summary>
-    /// Get method to return the current health level, and number of lives.
+    /// Get method to return the current health level.
     /// </summary>
     public static int GetHealthLeft() { return healthLeft; }
+
+    /// <summary>
+    /// Get method to return the current score value.
+    /// </summary>
+    public static int GetScore() { return scoreAdd; }
 
     /// <summary>
     /// If the player is hit the player's health will be reduced. 
@@ -40,20 +48,41 @@ public class Player : MonoBehaviour {
             
             healthLeft -= 20;
             Debug.Log("Player class Deadly damage : " + healthLeft);
-  //          GetHealthLeft();
+            //          GetHealthLeft();
+            Destroy(item.gameObject);
         }
         if (tag == "SmallDamage") {
 
             healthLeft -= 20;
-            Debug.Log("Player class Deadly damage : " + healthLeft);
- //           GetHealthLeft();
+            Destroy(item.gameObject);
+        }
+
+        if (tag == "InventoryItem") {
+            Destroy(item.gameObject);
         }
     }
 
+    /// <summary>
+    /// This method is responsible for increase an health level 
+    /// when health bar is selected in the inventory. Since the method is public static therefore
+    /// can be accessed by any classes  
+    /// </summary>
+    /// <param name="addHealth"></param>
     public static void UsedHealthPack(int addHealth) {
-
         if (healthLeft < MAX_HEALTH) {
             healthLeft += addHealth;
         }
+    }
+
+    /// <summary>
+    /// This method is responsible for increase an health level 
+    /// when health bar is selected in the inventory. Since the method is public static therefore
+    /// can be accessed by any classes  
+    /// </summary>
+    /// <param name="addScore"></param>
+    public static void UsedScore(int addScore) {
+
+        scoreAdd += addScore;
+  
     }
 }

@@ -3,12 +3,6 @@ using System.Collections;
 
 public class PlayerHealthGUI : MonoBehaviour {
 
-
-    /// <summary>
-    /// Instantiate the player class
-    /// </summary>
-    private Player player;
-
     const int MAX_HEALTH = 100;
     int healthLeft;
     /**
@@ -23,16 +17,6 @@ public class PlayerHealthGUI : MonoBehaviour {
 
     private void OnGUI() {
         DisplayHealtLeft();
-    }
-
-    // Use this for initialization
-    void Start () {
-
-        player = GetComponent<Player>();
-    }
-
-    void Update() {
-
     }
 
     /**

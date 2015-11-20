@@ -102,7 +102,7 @@ public class PlayerInventoryGUI : MonoBehaviour {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 // Create extra slots within the inventory bag by instantiating the slot prefab 
-                GameObject generateSlot = (GameObject)Instantiate(prefabSlot);
+                GameObject generateSlot = Instantiate(prefabSlot);
 
                 //Create a rectangular shape for the slot
                 RectTransform slotRect = generateSlot.GetComponent<RectTransform>();

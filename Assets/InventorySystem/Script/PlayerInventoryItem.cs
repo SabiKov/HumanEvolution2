@@ -12,11 +12,13 @@ public class PlayerInventoryItem : MonoBehaviour {
     public Sprite spriteHighlighted;
     public int stockSize = 1;
 
-    const int RELOAD_HEALTH = 0;
+    private int RELOAD_HEALTH = 20;
+    const int ADD_SCORE = 10;
 
     private Player player;
 
     private int healthLeft;
+    private int totalScore;
 
     void Start() {
 
@@ -37,8 +39,7 @@ public class PlayerInventoryItem : MonoBehaviour {
         if (itemType == ItemType.Health) {
             healthLeft = Player.GetHealthLeft();
             if (healthLeft <= 80) {
-                Player.UsedHealthPack(20);
-                //     healthReload = healthAdd;
+                Player.UsedHealthPack(RELOAD_HEALTH);
                 Debug.Log("I reload +20% of health ");
             }
             else {
@@ -64,6 +65,7 @@ public class PlayerInventoryItem : MonoBehaviour {
         }
         else if (itemType == ItemType.Badge) {
             Debug.Log("I pick up BADGE item");
+            Player.UsedScore(ADD_SCORE);
         }
         else if (itemType == ItemType.Special) {
             Debug.Log("I pick up tool");
