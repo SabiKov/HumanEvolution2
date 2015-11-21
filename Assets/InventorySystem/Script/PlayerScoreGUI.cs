@@ -7,7 +7,6 @@ public class PlayerScoreGUI : MonoBehaviour
     /// <summary>
     /// Instantiate the player class
     /// </summary>
-    private Player player;
 
     const int INI_SCORE = 0;
     int totalScore;
@@ -30,7 +29,6 @@ public class PlayerScoreGUI : MonoBehaviour
     void Start()
     {
 
-        player = GetComponent<Player>();
     }
 
     void Update()
