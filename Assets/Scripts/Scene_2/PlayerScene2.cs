@@ -11,7 +11,7 @@ public class PlayerScene2 : MonoBehaviour
 	
 	public void Awake()
 	{
-		DontDestroyOnLoad (this);
+		//DontDestroyOnLoad (this);
 	}
 
 	public void Update()

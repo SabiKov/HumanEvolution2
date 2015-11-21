@@ -6,9 +6,9 @@ public class DoorBehaviour : MonoBehaviour
 	public AudioClip open;
 	private AudioSource source;
 	public PlayerScene2 player;
-	public bool opening = false;
+	private bool opening = false;
 	public GameObject message;
-	public int loadLevel;
+	public string loadLevelString;
 	
 	public void Start()
 	{
@@ -22,7 +22,7 @@ public class DoorBehaviour : MonoBehaviour
 			if (!source.isPlaying)
 			{
 				player.unfreezePlayer();
-				Application.LoadLevel (loadLevel);
+				Application.LoadLevel (loadLevelString);
 			}
 		}
 	}
