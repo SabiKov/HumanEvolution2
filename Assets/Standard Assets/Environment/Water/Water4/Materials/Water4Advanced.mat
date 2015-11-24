@@ -162,6 +162,10 @@ Material:
         second: 313.218384
       data:
         first:
+          name: _InvFade
+        second: .628782988
+      data:
+        first:
           name: _WaveScale
         second: .0462896563
       data:
@@ -188,10 +192,6 @@ Material:
         first:
           name: _NormalsDisplacement
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: .628782988
       data:
         first:
           name: _Displacement
@@ -263,6 +263,10 @@ Material:
         second: {r: 1, g: 1, b: .100000001, a: .100000001}
       data:
         first:
+          name: _SpecularColor
+        second: {r: .917910457, g: .917910457, b: .917910457, a: 1}
+      data:
+        first:
           name: _BumpMap_ST
         second: {r: 1, g: 1, b: 0, a: 0}
       data:
@@ -325,10 +329,6 @@ Material:
         first:
           name: _ReflectionColor
         second: {r: .579416394, g: .684923828, b: .76119405, a: .431372553}
-      data:
-        first:
-          name: _SpecularColor
-        second: {r: .917910457, g: .917910457, b: .917910457, a: 1}
       data:
         first:
           name: _WorldLightDir
