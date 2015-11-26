@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// Get method to return the current health level, and number of lives.
     /// </summary>
-    public int GetHealthLeft() { return healthLeft; }
+  //  public int GetHealthLeft() { return healthLeft; }
 
     /// <summary>
     /// Method to detect when the player collides with enemy.
