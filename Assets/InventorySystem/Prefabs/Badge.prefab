@@ -11,9 +11,10 @@ GameObject:
   - 33: {fileID: 3397480}
   - 23: {fileID: 2346060}
   - 95: {fileID: 9517222}
+  - 114: {fileID: 11491410}
   m_Layer: 0
   m_Name: Badge
-  m_TagString: Untagged
+  m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,13 +79,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11491410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab55f32974fc294283d0243cc2d8e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteNeutral: {fileID: 21300000, guid: 1c0d76650e6a76c4480a9fcb875dd8ed, type: 3}
+  spriteHighlighted: {fileID: 21300000, guid: 0c1da10b0d5d1bd4d8c4038aa2cb6556, type: 3}
+  stockSize: 1
+  itemType: 6
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: InventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteNeutral
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c0d76650e6a76c4480a9fcb875dd8ed,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: spriteHighlighted
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c1da10b0d5d1bd4d8c4038aa2cb6556,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: itemType
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127458}

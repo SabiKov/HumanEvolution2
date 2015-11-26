@@ -10,7 +10,7 @@ using System.Collections;
 public class Login_Register : MonoBehaviour {
 
 	//veriables to store user and name 
-	public static string user = "", name = "";
+	public static string user = "", Uname = "";
 	//veriable to store user password (message veriable is used to print if a user is Successfull when loging in or unsuccessful
 	private string password = "", rePass = "", message = "";
 	//boolen veriable to check if a user is registered 

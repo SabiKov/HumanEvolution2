@@ -11,9 +11,10 @@ GameObject:
   - 33: {fileID: 3305680}
   - 23: {fileID: 2356638}
   - 95: {fileID: 9529426}
+  - 114: {fileID: 11443896}
   m_Layer: 0
   m_Name: Chapter
-  m_TagString: Untagged
+  m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -78,13 +79,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11443896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab55f32974fc294283d0243cc2d8e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteNeutral: {fileID: 21300000, guid: 2ca1d71a5787e7c46a92f72d6ece183d, type: 3}
+  spriteHighlighted: {fileID: 21300000, guid: b3024dbe3c0cc1149baa216f2440ade6, type: 3}
+  stockSize: 1
+  itemType: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: InventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteNeutral
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ca1d71a5787e7c46a92f72d6ece183d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: spriteHighlighted
+      value: 
+      objectReference: {fileID: 21300000, guid: b3024dbe3c0cc1149baa216f2440ade6,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: itemType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 182794}

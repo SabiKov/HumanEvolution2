@@ -1,0 +1,254 @@
+[
+  {
+    "scene" : 0,
+    "COMMENTS" : "The JSON holds an arrray of scene objects.
+                  Each scene object has an array of infopoint objects
+                  stating where they are in the scene, the title for their info
+                  pop-up, the text for their info pop-up, background image ref
+                  and an array of titles and text for 'learn more' buttons."
+  }
+
+  {
+    "scene" : 1,
+    "infopoints" : [
+      {
+        "location" : "Introduction",
+        "title" : "The Stone Age",
+        "description" : "The dawn of man's evolution, checkout Stonehenge!",
+        "learn_more" : [
+          {
+          "topic" : "Stone Age Topic 1",
+          "detail" : "Details about topic 1"
+          }
+          {
+          "topic" : "Stone Age Topic 2",
+          "detail" : "Details about topic 2"
+          }
+        ]
+      }
+    ]
+  }
+
+  {
+    "scene" : 2,
+    "infopoints" : [
+      {
+        "location" : "Introduction",
+        "title" : "The Renaissance",
+        "description" : "The Renaissance was a period in Europe, from the 14th to the 17th century, considered the bridge between the Middle Ages and modern history. It started as a cultural movement in Italy in the Late Medieval period and later spread to the rest of Europe, marking the beginning of the Early Modern Age.",
+        "learn_more" : [
+          {
+          "topic" : "Renaissance topic 1",
+          "detail" : "more info on topic 1"
+          }
+          {
+          "topic" : "Renaissance topic 2",
+          "detail" : "more info on topic 2"
+          }
+          {
+          "topic" : "Renaissance topic 3",
+          "detail" : "more info on topic 3"
+          }
+          {
+          "topic" : "Renaissance topic 4",
+          "detail" : "more info on topic 4"
+          }
+          {
+          "topic" : "Renaissance topic 5",
+          "detail" : "more info on topic 5"
+          }
+        ]
+      }
+      {
+        "location" : "Leonardo",
+        "title" : "Leonardo DaVinci",
+        "description" : "Welcome to Leonardo's workshop, home to one of the period's most renowned and prodigious characters",
+        "learn_more" : [
+          {
+          "topic" : "Leonardo Da Vinci's Life",
+          "detail" : "more info on Life"
+          }
+          {
+          "topic" : "Leonardo Da Vinci's Works",
+          "detail" : "more info on Works"
+          }
+          {
+          "topic" : "Leonardo Da Vinci's Influences",
+          "detail" : "more info on Influences"
+          }
+        ]
+      }      
+      {
+        "location" : "Harbour",
+        "title" : "Francis Bacon's Ship",
+        "description" : "About to set sail...",
+        "learn_more" : [
+          {
+          "topic" : "Topic 1",
+          "detail" : "more info on topic 1"
+          }
+          {
+          "topic" : "Topic 2",
+          "detail" : "more info on topic 2"
+          }
+          {
+          "topic" : "Topic 3",
+          "detail" : "more info on topic 3"
+          }
+          {
+          "topic" : "Topic 4",
+          "detail" : "more info on topic 4"
+          }
+        ]
+      }
+      {
+        "location" : "Galileo",
+        "title" : "Galileo Galilei's Workshop",
+        "description" : "What, no parachute?",
+        "learn_more" : [
+          {
+          "topic" : "Topic 1",
+          "detail" : "more info on topic 1"
+          }
+          {
+          "topic" : "Topic 2",
+          "detail" : "more info on topic 2"
+          }
+          {
+          "topic" : "Topic 3",
+          "detail" : "more info on topic 3"
+          }
+          {
+          "topic" : "Topic 4",
+          "detail" : "more info on topic 4"
+          }
+        ]
+      }
+    ],
+    "characters" : [
+      {
+        "tag" : "leonardo",
+        "name" : "Leonardo da Vinci",
+        "welcome" : "Buongiorno, what brings you to my workshop? I am quite busy right now...",
+        "dialogues" : [
+          {
+            "question_1" : "Tell me about your life ...",
+            "response_1" : "I was born here in Vinci ..."
+          }
+          {
+            "question_2" : "Who were your influences ...",
+            "response_2" : "Archimedes of Syracuse ..."
+          }
+      	  {
+      	    "question_3" : "What are you working on now ...",
+            "response_3" : "I'm trying to visualise ..."
+          }
+          {
+            "question_4" : "How can I help you ...",
+            "response_4" : "I need some charcoal ..."
+          }
+        ]
+      }
+      {
+        "tag" : "francis",
+        "name" : "Francis Bacon",
+        "welcome" : "Ahoy shipmate...",
+        "dialogues" : [
+          {
+            "question_1" : "Tell me about your life ...",
+            "response_1" : "I was born here in Vinci ..."
+          }
+          {
+            "question_2" : "Who were your influences ...",
+            "response_2" : "Archimedes of Syracuse ..."
+          }
+      	  {
+      	    "question_3" : "What are you working on now ...",
+            "response_3" : "I'm trying to visualise ..."
+          }
+          {
+            "question_4" : "How can I help you ...",
+            "response_4" : "I need some charcoal ..."
+          }
+        ]
+      }
+      {
+        "tag" : "galileo",
+        "name" : "Galileo Galilei",
+        "welcome" : "Hello ...",
+        "dialogues" : [
+          {
+            "question_1" : "Tell me about your life ...",
+            "response_1" : "I was born here in Vinci ..."
+          }
+          {
+            "question_2" : "Who were your influences ...",
+            "response_2" : "Archimedes of Syracuse ..."
+          }
+      	  {
+      	    "question_3" : "What are you working on now ...",
+            "response_3" : "I'm trying to visualise ..."
+          }
+          {
+            "question_4" : "How can I help you ...",
+            "response_4" : "I need some charcoal ..."
+          }
+        ]
+      }
+    ]
+  }
+
+  {
+    "scene" : 3,
+    "infopoints" : [
+      {
+        "location" : "Infopoint_Scene_3",
+        "title" : "Ancient Egypt",
+        "description" : "Explore the Pyramids and the wonders of ancient egypt",
+        "learn_more" : [
+          {
+          "topic" : "Egyptian Topic 1",
+          "detail" : "more info on topic 1"
+          }
+          {
+          "topic" : "Egyptian Topic 2",
+          "detail" : "more info on topic 2"
+          }
+          {
+          "topic" : "Egyptian Topic 3",
+          "detail" : "more info on topic 3"
+          }
+        ]
+      }
+    ]
+  }
+
+  {
+    "scene" : 4,
+    "infopoints" : [
+      {
+        "location" : "Infopoint_Scene_4",
+        "title" : "The Modern Age",
+        "description" : "Bright lights, big city",
+        "learn_more" : [
+          {
+          "topic" : "Modern Topic 1",
+          "detail" : "more info on topic 1"
+          }
+          {
+          "topic" : "Modern Topic 2",
+          "detail" : "more info on topic 2"
+          }
+          {
+          "topic" : "Modern Topic 3",
+          "detail" : "more info on topic 3"
+          }
+          {
+          "topic" : "Modern Topic 4",
+          "detail" : "more info on topic 4"
+          }
+        ]
+      }
+    ]
+  }
+]

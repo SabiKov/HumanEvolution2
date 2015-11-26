@@ -6,6 +6,12 @@ TagManager:
   tags:
   - InventoryTag
   - InventoryItem
+  - DeadlyDamage
+  - SmallDamage
+  - Door
+  - Wall
+  - Introduction
+  - Leonardo
   layers:
   - Default
   - TransparentFX
