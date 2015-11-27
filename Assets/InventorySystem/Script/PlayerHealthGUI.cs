@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// The Inventory System is under construction, 
+/// thus, it is not the final architecture of the inventory system.
+/// The functionalities and layout will be the same, however,
+/// the system will receive a new MVC design pattern in the final release version of the game.
+/// </summary>
 public class PlayerHealthGUI : MonoBehaviour {
 
     const int MAX_HEALTH = 100;
