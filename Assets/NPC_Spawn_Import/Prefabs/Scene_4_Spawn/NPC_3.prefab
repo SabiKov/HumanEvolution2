@@ -161,7 +161,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a12d6d26a7c951a4f8452bc26a9a97d1, type: 2}
+  - {fileID: 2100000, guid: a3fe58ae9b819ae45a2326a32a6bb45d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -376,7 +376,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a12d6d26a7c951a4f8452bc26a9a97d1, type: 2}
+      objectReference: {fileID: 2100000, guid: a3fe58ae9b819ae45a2326a32a6bb45d, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Speed
       value: 6
