@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab55f32974fc294283d0243cc2d8e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNeutral: {fileID: 21300000, guid: 2ca1d71a5787e7c46a92f72d6ece183d, type: 3}
-  spriteHighlighted: {fileID: 21300000, guid: b3024dbe3c0cc1149baa216f2440ade6, type: 3}
+  spriteNeutral: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5, type: 3}
+  spriteHighlighted: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d, type: 3}
   stockSize: 1
   itemType: 1
 --- !u!1001 &100100000
@@ -108,12 +108,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: spriteNeutral
       value: 
-      objectReference: {fileID: 21300000, guid: 2ca1d71a5787e7c46a92f72d6ece183d,
+      objectReference: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5,
         type: 3}
     - target: {fileID: 0}
       propertyPath: spriteHighlighted
       value: 
-      objectReference: {fileID: 21300000, guid: b3024dbe3c0cc1149baa216f2440ade6,
+      objectReference: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d,
         type: 3}
     - target: {fileID: 0}
       propertyPath: itemType

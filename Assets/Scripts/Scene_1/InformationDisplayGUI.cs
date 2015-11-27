@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InformationDisplayGUI : MonoBehaviour {
 
-
+/*
     private string introLine1 = "The Stone Age was a time in history when early humans used tools and weapons made out of stone.";
     private string introLine2 = "It lasted from when the first stone tools were made, by our ancestors, about 3.4 million years";
     private string introLine3 = "ago until the introduction of metal tools a few thousand years ago. The Stone Age is divided into";
@@ -42,4 +42,5 @@ public class InformationDisplayGUI : MonoBehaviour {
             introLine8 + "\n"
             );
     }
+    */
 }
