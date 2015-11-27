@@ -1,11 +1,11 @@
 #Unity Game Project
 Group: 1B;
 
-Contributeors: 
- Daragh Walshe
- Szabolcs Kovacs
- Dave Breen
- Bernard Jose
+Contributors: 
+ Daragh Walshe,
+ Szabolcs Kovacs,
+ Dave Breen,
+ Bernard Jose,
  
  Breif Summary of the Game
  
