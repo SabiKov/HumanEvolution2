@@ -2,10 +2,10 @@
 Group: 1B;
 
 Contributors: 
- Daragh Walshe,
- Szabolcs Kovacs,
- Dave Breen,
- Bernard Jose,
+ Daragh Walshe B00064428,
+ Szabolcs Kovacs B00063874,
+ Dave Breen B00064153,
+ Bernard Jose B00063723,
  
  Breif Summary of the Game
  
