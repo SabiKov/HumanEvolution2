@@ -11,9 +11,10 @@ GameObject:
   - 33: {fileID: 3397480}
   - 23: {fileID: 2346060}
   - 95: {fileID: 9517222}
-  - 114: {fileID: 11491410}
+  - 65: {fileID: 6512354}
+  - 114: {fileID: 11469138}
   m_Layer: 0
-  m_Name: Badge
+  m_Name: ScoreStar
   m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127458}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 132.942413, y: 1, z: 56.7000008}
+  m_LocalPosition: {x: 134.684464, y: .610000014, z: 60.3617554}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127458}
   m_Mesh: {fileID: 4300000, guid: 4f1c7682b86035c4aac4a88eb88a9477, type: 3}
+--- !u!65 &6512354
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .00224999967, y: .0312244799, z: .0320795849}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9517222
 Animator:
   serializedVersion: 3
@@ -79,7 +92,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11491410
+--- !u!114 &11469138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,13 +100,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 127458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab55f32974fc294283d0243cc2d8e72, type: 3}
+  m_Script: {fileID: 11500000, guid: 0103d9a2ca194224f8773fd25a2f5f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNeutral: {fileID: 21300000, guid: 1c0d76650e6a76c4480a9fcb875dd8ed, type: 3}
-  spriteHighlighted: {fileID: 21300000, guid: 0c1da10b0d5d1bd4d8c4038aa2cb6556, type: 3}
-  stockSize: 1
-  itemType: 6
+  AnimationLiftingDistance: 3
+  RotationSpeed: 25
+  MovingSpeed: 1
+  GameItemType: 0
+  AnimationType: 0
+  addedScoreValue: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

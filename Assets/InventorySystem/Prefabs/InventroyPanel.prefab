@@ -10,15 +10,18 @@ GameObject:
   - 224: {fileID: 22424248}
   - 222: {fileID: 22278262}
   - 114: {fileID: 11478890}
-  - 114: {fileID: 11441422}
+  - 225: {fileID: 22573180}
+  - 114: {fileID: 11428588}
+  - 114: {fileID: 11420684}
+  - 114: {fileID: 11464434}
   m_Layer: 5
-  m_Name: InventroyFrame
+  m_Name: InventroyPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11441422
+--- !u!114 &11420684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -26,16 +29,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 112636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a282597c51fe244914ff9dac6c306b, type: 3}
+  m_Script: {fileID: 11500000, guid: a65839f8761ee304ea2546f9c4064529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  eventSystem: {fileID: 0}
-  prefabSlot: {fileID: 182824, guid: db315d211b3d7cc419ca9e065a7a0a39, type: 2}
-  columns: 4
-  rows: 4
-  slotSizeWidth: 30
-  slotSizeHeight: 30
+  SlotSize: {x: 5, y: 5}
+  Spacing: {x: 0, y: 0}
+  AnimationSpeed: 1
+  InventorySlotItem: {fileID: 182824, guid: db315d211b3d7cc419ca9e065a7a0a39, type: 2}
+--- !u!114 &11428588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8c0df6b962aba4488ac59f629d39f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SizePercent: {x: .224999994, y: .300000012}
+  DependPanelTransform: {fileID: 0}
+  CalculationSizeType: 2
+--- !u!114 &11464434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!114 &11478890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,6 +123,17 @@ RectTransform:
   m_AnchoredPosition: {x: -199, y: 199}
   m_SizeDelta: {x: 103, y: 100}
   m_Pivot: {x: 1.49011612e-07, y: 1.00000012}
+--- !u!225 &22573180
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112636}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

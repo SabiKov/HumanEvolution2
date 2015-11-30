@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿
+[System.Serializable]
 public class InventoryItemDescriptor {
 
     public string Name;
