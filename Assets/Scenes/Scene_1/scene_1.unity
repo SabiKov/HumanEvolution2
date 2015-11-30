@@ -772,6 +772,73 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0370710641, y: .0301916543, z: .0370710641}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &735596830 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 112636, guid: 28b0dbce9746ef84ab9775b48854b21b, type: 2}
+  m_PrefabInternal: {fileID: 669116934}
+--- !u!114 &735596831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735596830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8c0df6b962aba4488ac59f629d39f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SizePercent: {x: .224999994, y: .300000012}
+  DependPanelTransform: {fileID: 541409649}
+  CalculationSizeType: 2
+--- !u!114 &735596832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735596830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65839f8761ee304ea2546f9c4064529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotSize: {x: 5, y: 5}
+  Spacing: {x: 0, y: 0}
+  AnimationSpeed: 1
+  InventorySlotItem: {fileID: 182824, guid: db315d211b3d7cc419ca9e065a7a0a39, type: 2}
+--- !u!114 &735596833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735596830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!225 &735596834
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735596830}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &781023978
 Prefab:
   m_ObjectHideFlags: 0
