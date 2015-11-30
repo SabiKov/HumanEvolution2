@@ -21,13 +21,13 @@ public abstract class AbstarctGameItemController : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
         this.originalYPosition = this.gameObject.transform.position.y;
         this.targetYPosition = this.originalYPosition - AnimationLiftingDistance;
     }
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
         if (this.AnimationType == GameItemAnimationTypes.NONE)
             return;
 

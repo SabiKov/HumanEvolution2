@@ -51,21 +51,19 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
 
     private InventoryAnimationStates animationState;
 
-    public List<GameObject> GetInventoryItems()
-    {
-        return inventoryItems;
-    }
+
 
     // Use this for initialization
-    void Start () {
+    private void Start () {
+        this.animationState = InventoryAnimationStates.NONE;
         this.layoutGroup = this.gameObject.GetComponent<GridLayoutGroup>();
         this.canvasGroup = this.gameObject.GetComponent<CanvasGroup>();
 
-        var responsiveUtil = this.gameObject.GetComponent<ResponsiveUI>();
-        if (responsiveUtil != null)
-            responsiveUtil.CalculateSize();
+        var responsiveUI = this.gameObject.GetComponent<ResponsiveUI>();
+        if (responsiveUI != null)
+            responsiveUI.CalculateSize();
 
-        InitInventoryPanel();
+        this.InitInventoryPanel();
         this.PopulateSlots();
         this.PopulateItems();
     }
@@ -159,6 +157,10 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         }
     }
 
+    public List<GameObject> GetInventoryItems()
+    {
+        return inventoryItems;
+    }
     /// <summary>
     /// Add item to inventory
     /// </summary>
@@ -257,4 +259,6 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     {
         this.animationState = InventoryAnimationStates.OPENING;
     }
+
+
 }

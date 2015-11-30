@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 
 /// <summary>
 /// This is a player controller such as player's data
 /// </summary>
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour, IPlayerController {
 
     /// <summary>
@@ -16,13 +15,15 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// Instantiate the interfaces
     /// </summary>
     private IInventorySystemController inventorySystem;
-    private IScorePanelController scoreSystem;
+    private IScorePanelController scoreBarSystem;
+    private IHealthBarController heathBarSystem;
 
     /// <summary>
     /// Create public prefab slot
     /// </summary>
     public GameObject inventoryPanel;
-    public GameObject ScorePanel;
+    public GameObject scorePanel;
+    public GameObject healthPanel;
 
     /// <summary>
     /// Singleton
@@ -48,8 +49,11 @@ public class PlayerController : MonoBehaviour, IPlayerController {
         if (this.inventoryPanel != null)
             this.inventorySystem = this.inventoryPanel.GetComponent<IInventorySystemController>();
 
-        if (this.ScorePanel != null)
-            this.scoreSystem = this.ScorePanel.GetComponent<IScorePanelController>();
+        if (this.scorePanel != null)
+            this.scoreBarSystem = this.scorePanel.GetComponent<IScorePanelController>();
+
+        if (this.healthPanel != null)
+            this.heathBarSystem = this.healthPanel.GetComponent<IHealthBarController>();
     }
 
     /// <summary>
@@ -108,12 +112,56 @@ public class PlayerController : MonoBehaviour, IPlayerController {
 
         this.playerModel.Score += value;
 
-        Debug.Log("2 PalyerController" + value.ToString());
+      //  Debug.Log("2 PalyerController" + value.ToString());
 
         //Update Text in score Panel
-        if (scoreSystem != null)
-            scoreSystem.UpdateScoreText(this.playerModel.Score); // update score
+        if (scoreBarSystem != null)
+            scoreBarSystem.UpdateScoreText(this.playerModel.Score); // update score
 
         Debug.Log("3 PalyerController" + this.playerModel.Score);
+    }
+
+    public void HitPlayer(int amount)
+    {
+        if (this.playerModel == null)
+            return;
+
+        this.playerModel.Health = (int)Mathf.Clamp(this.playerModel.Health - amount, 0.0f, PlayerModel.MAX_HEALTH);
+        this.UpdateHealthBar();
+    }
+
+    /// <summary>
+    /// Chapter is selected load the next level
+    /// </summary>
+    /// <param name="chapterName"></param>
+    public void UseChapter(string chapterName)
+    {
+        if (string.IsNullOrEmpty(chapterName))
+            return;
+
+        Application.LoadLevel(chapterName);
+    }
+
+    /// <summary>
+    /// Implementation of interface method
+    /// </summary>
+    /// <param name="healingValue"></param>
+    public void HealPlayer(int amount)
+    {
+        Debug.Log("2 PalyerController HealPlayer method " + amount.ToString());
+        if (this.playerModel == null)
+            return;
+
+        this.playerModel.Health = (int)Mathf.Clamp(this.playerModel.Health + amount, 0.0f, PlayerModel.MAX_HEALTH);
+        this.UpdateHealthBar();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void UpdateHealthBar()
+    {
+        if (this.heathBarSystem != null)
+            this.heathBarSystem.SetHealth(((float)this.playerModel.Health) / ((float)PlayerModel.MAX_HEALTH));
     }
 }
