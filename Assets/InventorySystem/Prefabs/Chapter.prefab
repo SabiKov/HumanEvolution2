@@ -11,7 +11,8 @@ GameObject:
   - 33: {fileID: 3305680}
   - 23: {fileID: 2356638}
   - 95: {fileID: 9529426}
-  - 114: {fileID: 11443896}
+  - 65: {fileID: 6500250}
+  - 114: {fileID: 11450076}
   m_Layer: 0
   m_Name: Chapter
   m_TagString: InventoryItem
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182794}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 133.623077, y: 1, z: 62.4000015}
+  m_LocalPosition: {x: 131.8862, y: 1.05999994, z: 58.5003853}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182794}
   m_Mesh: {fileID: 4300000, guid: ae38f96e1852a684fb28c1bfd5d6336d, type: 3}
+--- !u!65 &6500250
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .00827713031, y: .0225175153, z: .017061891}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9529426
 Animator:
   serializedVersion: 3
@@ -79,7 +92,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11443896
+--- !u!114 &11450076
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,13 +100,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 182794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab55f32974fc294283d0243cc2d8e72, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bfbb06c7449a444fa93ec4d7819e5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNeutral: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5, type: 3}
-  spriteHighlighted: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d, type: 3}
-  stockSize: 1
-  itemType: 1
+  AnimationLiftingDistance: 2
+  RotationSpeed: 10
+  MovingSpeed: 0
+  GameItemType: 0
+  AnimationType: 0
+  InventoryItem: {fileID: 199080, guid: 65bee8f2cc7c87a41b6f8d12bad185bc, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -117,6 +132,14 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: itemType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stockSize
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

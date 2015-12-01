@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ScorePanelController : MonoBehaviour, IScorePanelController {
+public class ScorePanelController : MonoBehaviour, IScorePanelController
+{
 
+    /// <summary>
+    ///    Display score on panel 
+    /// </summary>
     public Text ScoreText;
 
     /// <summary>
@@ -11,9 +15,8 @@ public class ScorePanelController : MonoBehaviour, IScorePanelController {
     /// <param name="scoreValue">increase the scoreValue</param>
     public void UpdateScoreText(int scoreValue)
     {
-        if (this.ScoreText != null)
+        if(this.ScoreText != null)
             this.ScoreText.text = scoreValue.ToString();
-
-        Debug.Log("ScorePanelController UpdateScoreText" + scoreValue.ToString());
     }
+
 }

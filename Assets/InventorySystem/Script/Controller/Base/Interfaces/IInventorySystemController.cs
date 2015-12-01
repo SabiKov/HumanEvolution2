@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using UnityEngine;
 /// <summary>
 /// Interface implementation of the inventorySystemController,
 /// group of related functionalities is implemented in the 
@@ -17,7 +16,7 @@ public interface IInventorySystemController {
     /// <summary>
     /// Add item to the inventory slot
     /// </summary>
-    /// <param name="item"></param>
+    /// <param name="item">inventory item</param>
     void AddInventoryItem(GameObject item);
 
     /// <summary>
