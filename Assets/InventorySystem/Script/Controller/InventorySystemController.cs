@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 /// <summary>
 /// Inventory control system:
@@ -9,7 +9,8 @@ using UnityEngine.UI;
 /// </summary>
 [RequireComponent(typeof(CanvasGroup))]
 [RequireComponent(typeof(GridLayoutGroup))]
-public class InventorySystemController : MonoBehaviour, IInventorySystemController {
+public class InventorySystemController : MonoBehaviour, IInventorySystemController
+{
 
     /// <summary>
     /// animationTimer: holds value of fade in and out feature 
@@ -17,13 +18,17 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// canvasGroup: property of the inv.panel
     /// </summary>
     private float animationTimer;
+
     private GridLayoutGroup layoutGroup;
     private CanvasGroup canvasGroup;
+
+    private InventoryAnimationStates animationState;
 
     /// <summary>
     /// Holds items object
     /// </summary>
     private static List<GameObject> inventoryItems = new List<GameObject>();
+
     /// <summary>
     /// Set and access the current state of the inv.panel
     /// </summary>
@@ -35,13 +40,8 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// Spacing: padding value of item, but x and y values are used for calculation
     /// </summary>
     [Header("Panel Settings")]
-    public Vector2 SlotSize = new Vector2(5, 5);
+    public Vector2 ItemSize = new Vector2(5, 5);
     public Vector2 Spacing = new Vector2(0.0f, 0.0f);
-    /// <summary>
-    /// Declare the fade in/out animation speed
-    /// </summary>
-    [Header("Animation Settings")]
-    public float AnimationSpeed = 1.0f;
 
     /// <summary>
     /// Declare Slot prefab 
@@ -49,37 +49,26 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     [Header("Item Settings")]
     public GameObject InventorySlotItem;
 
-    private InventoryAnimationStates animationState;
-
-    public List<GameObject> GetInventoryItems()
-    {
-        return inventoryItems;
-    }
+    /// <summary>
+    /// Declare the fade in/out animation speed
+    /// </summary>
+    [Header("Animation Settings")]
+    public float AnimationSpeed = 1.0f;
 
     // Use this for initialization
-    void Start () {
+    private void Start()
+    {
+        this.animationState = InventoryAnimationStates.NONE;
         this.layoutGroup = this.gameObject.GetComponent<GridLayoutGroup>();
         this.canvasGroup = this.gameObject.GetComponent<CanvasGroup>();
 
-        var responsiveUtil = this.gameObject.GetComponent<ResponsiveUI>();
-        if (responsiveUtil != null)
+        var responsiveUtil = this.gameObject.GetComponent<ResponsiveUtil>();
+        if(responsiveUtil != null)
             responsiveUtil.CalculateSize();
 
-        InitInventoryPanel();
+        this.InitInventoryPanel();
         this.PopulateSlots();
         this.PopulateItems();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.I) && this.animationState == InventoryAnimationStates.NONE)
-            SwitchOpenCloseInventory();
-
-        var deltaT = Time.deltaTime;
-        if (this.animationState == InventoryAnimationStates.OPENING)
-            StepOpeningAnimation(deltaT);
-        else if (this.animationState == InventoryAnimationStates.CLOSING)
-            StepClosingAnimation(deltaT);
     }
 
     /// <summary>
@@ -88,22 +77,21 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     private void InitInventoryPanel()
     {
         var panelRect = this.transform as RectTransform;
-        if (panelRect == null)
+        if(panelRect == null)
             return;
 
-        this.layoutGroup.cellSize = new Vector2((panelRect.rect.width / SlotSize.x) - (Spacing.x * SlotSize.x),
-                                                (panelRect.rect.height / SlotSize.y) - (Spacing.y * SlotSize.y));
+        this.layoutGroup.cellSize = new Vector2((panelRect.rect.width / ItemSize.x) - (Spacing.x * ItemSize.x), (panelRect.rect.height / ItemSize.y) - (Spacing.y * ItemSize.y));
     }
+
     /// <summary>
     /// Instantiate slot items 
     /// </summary>
     private void PopulateSlots()
     {
-        if (this.InventorySlotItem == null)
+        if(this.InventorySlotItem == null)
             return;
 
-        for (int i = 0; i < SlotSize.x * SlotSize.y; i++)
-        {
+        for(int i = 0; i < ItemSize.x * ItemSize.y; i++) {
             var instance = Instantiate(this.InventorySlotItem);
             instance.transform.SetParent(this.transform);
             instance.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -111,8 +99,8 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
             var slotTransform = instance.transform as RectTransform;
             slotTransform.sizeDelta = new Vector2(this.layoutGroup.cellSize.x, this.layoutGroup.cellSize.y);
         }
-    } // end populate slot
-    
+    }
+
     /// <summary>
     /// Adding items into inventory panel
     /// </summary>
@@ -121,12 +109,25 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         if (inventoryItems == null)
             return;
 
-        foreach (var item in inventoryItems)
-        {
+        foreach (var item in inventoryItems) {
             this.InstantinateObject(item, inventoryItems.IndexOf(item));
         }
     }
-      
+
+    /// <summary>
+    /// Control panel animation
+    /// </summary>
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.I) && this.animationState == InventoryAnimationStates.NONE)
+            SwitchPopup();
+
+        var deltaT = Time.deltaTime;
+        if (this.animationState == InventoryAnimationStates.OPENING)
+            StepOpeningAnimation(deltaT);
+        else if (this.animationState == InventoryAnimationStates.CLOSING)
+            StepClosingAnimation(deltaT);
+    }
 
     /// <summary>
     /// Opening inventory panel with fading feature
@@ -137,12 +138,12 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, 1.1f, deltaT * AnimationSpeed);
         this.canvasGroup.alpha = newAlpha;
 
-        if (newAlpha >= 1.0f)
-        {
+        if(newAlpha >= 1.0f) {
             this.SetInventoryState(true);
             this.animationState = InventoryAnimationStates.NONE;
         }
     }
+
     /// <summary>
     /// Closing inventory panel with fading feature
     /// </summary>
@@ -152,12 +153,21 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, -0.1f, deltaT * AnimationSpeed);
         this.canvasGroup.alpha = newAlpha;
 
-        if (newAlpha <= 0.0f)
-        {
+        if(newAlpha <= 0.0f) {
             this.SetInventoryState(false);
             this.animationState = InventoryAnimationStates.NONE;
         }
     }
+
+    /// <summary>
+    /// Access inventory item
+    /// </summary>
+    /// <returns></returns>
+    public List<GameObject> GetInventoryItems()
+    {
+        return inventoryItems;
+    }
+
 
     /// <summary>
     /// Add item to inventory
@@ -165,12 +175,11 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// <param name="item">GameObject with AbstractInventoryItemControlScript component</param>
     public void AddInventoryItem(GameObject item)
     {
-        if (item == null)
+        if(item == null)
             return;
 
         var instance = InstantinateObject(item, inventoryItems.Count);
-        if (instance != null)
-        {
+        if(instance != null) {
             inventoryItems.Add(item);
         }
     }
@@ -197,6 +206,22 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     }
 
     /// <summary>
+    /// Start inventory opening animation
+    /// </summary>
+    public void OpenInventory()
+    {
+        this.animationState = InventoryAnimationStates.OPENING;
+    }
+
+    /// <summary>
+    /// Start inventory closing animation
+    /// </summary>
+    public void CloseInventory()
+    {
+        this.animationState = InventoryAnimationStates.CLOSING;
+    }
+
+    /// <summary>
     /// Instantiate inventory item object and set positions
     /// </summary>
     private GameObject InstantinateObject(GameObject item, int slotIndex)
@@ -207,8 +232,7 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
 
         var invItem = Instantiate(item);
         var itemScript = invItem.GetComponent<AbstractInventoryItemController>();
-        if (itemScript == null)
-        {
+        if(itemScript == null) {
             Destroy(invItem);
             Debug.LogWarning("Wrong item added to inventory!");
             return null;
@@ -225,7 +249,6 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         return invItem;
     }
 
-
     /// <summary>
     /// When the boolean value is true the inventory panel is set to visible on the scene
     /// </summary>
@@ -236,25 +259,12 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         this.canvasGroup.interactable = isOpen;
         this.canvasGroup.blocksRaycasts = isOpen;
     }
-    /// <summary>
-    /// Switch between the open close state of the inventory panel
-    /// </summary>
-    private void SwitchOpenCloseInventory()
-    {
-        if (this.IsOpen) { this.CloseInventory(); }
-        else
-            this.CloseInventory();
-    }
-    /// <summary>
-    /// Implementation of Interface's method
-    /// </summary>
-    public void CloseInventory()
-    {
-        this.animationState = InventoryAnimationStates.CLOSING;
-    }
 
-    public void OpenInventory()
+    private void SwitchPopup()
     {
-        this.animationState = InventoryAnimationStates.OPENING;
+        if (this.IsOpen)
+            this.CloseInventory();
+        else
+            this.OpenInventory();
     }
 }

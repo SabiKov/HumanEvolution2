@@ -5,7 +5,8 @@ using UnityEngine.UI;
 /// Abstract class for inventory item script
 /// </summary>
 [RequireComponent(typeof(Button))]
-public abstract class AbstractInventoryItemController : MonoBehaviour {
+public abstract class AbstractInventoryItemController : MonoBehaviour
+{
 
     /// <summary>
     /// Declare button for item
@@ -31,13 +32,12 @@ public abstract class AbstractInventoryItemController : MonoBehaviour {
         this.itemButton = this.gameObject.GetComponent<Button>();
         this.itemButton.onClick.AddListener(OnInventoryItemClicked);
     }
-
     /// <summary>
     /// Destroy item when is selected by player, if the sot is not empty
     /// </summary>
     protected void DoDestory()
     {
-        if (PlayerController.Instance != null)
+        if(PlayerController.Instance != null)
             PlayerController.Instance.RemoveInventoryItem(this.gameObject);
 
         Destroy(this.gameObject);
@@ -49,7 +49,8 @@ public abstract class AbstractInventoryItemController : MonoBehaviour {
     /// </summary>
     protected virtual void OnInventoryItemClicked()
     {
-      //  Debug.Log("Inventory item clicked");
+        Debug.Log("Inventory item clicked");
         DoDestory();
     }
+
 }
