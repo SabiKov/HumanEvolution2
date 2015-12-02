@@ -139,14 +139,15 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     }
 
     /// <summary>
-    /// Chapter is selected load the next level
+    /// Chapter is selected load the next level, based on the chapter
+    /// 
     /// </summary>
     /// <param name="chapterName"></param>
     public void UseChapter(string chapterName)
     {
         if(string.IsNullOrEmpty(chapterName))
             return;
-
+        Debug.Log("ChapterName: " + chapterName);
         Application.LoadLevel(chapterName);
     }
 

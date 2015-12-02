@@ -14,7 +14,7 @@ GameObject:
   - 65: {fileID: 6500250}
   - 114: {fileID: 11450076}
   m_Layer: 0
-  m_Name: Chapter
+  m_Name: Chapter_Scene_1
   m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

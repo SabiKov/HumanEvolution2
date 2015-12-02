@@ -3,9 +3,9 @@
     /// <summary>
     /// Each chapter item holds the next scene name
     /// </summary>
-    private const string CHAPTER_NAME_1 = "";
-    private const string CHAPTER_NAME_2 = "scene_2_exterior";
-    private const string CHAPTER_NAME_3 = "scene_2_interior_daVinci";
+    private const string CHAPTER_NAME_1 = "scene_2_exterior";
+    private const string CHAPTER_NAME_2 = "scene_4";
+    private const string CHAPTER_NAME_3 = "game_win_scene";
 
 
     private string nextSceneName;
@@ -13,7 +13,8 @@
     public ChapterTypes ChapterType;
 
     /// <summary>
-    /// which chapter is selected
+    /// which chapter is selected the nextSceneName is signed 
+    /// to the corresponding item
     /// </summary>
     protected override void OnInventoryItemClicked()
     {
