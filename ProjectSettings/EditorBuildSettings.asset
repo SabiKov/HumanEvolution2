@@ -16,4 +16,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_2/scene_2_interior_daVinci.unity
   - enabled: 1
+    path: Assets/Scenes/Scene_4/scene_4.unity
+  - enabled: 1
     path: Assets/Scenes/Scene_Login/Scene_login.unity
