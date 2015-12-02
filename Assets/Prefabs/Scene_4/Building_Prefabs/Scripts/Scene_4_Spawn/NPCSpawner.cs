@@ -75,9 +75,7 @@ public class NPCSpawner : MonoBehaviour {
      */
     void SpawnNewNPC() {
 
-        // Create NPC game object with rotation specified in inspector
-        Quaternion spawnRotation2 = Quaternion.Euler(0, npcFacing, 0);
-        //GameObject newNpc = (GameObject)Instantiate(npc, pos, spawnRotation2);
+        // Go to create new NPC method
 		GameObject newNpc = getNewNpc();
 
         if (newNpc != null) {
@@ -85,6 +83,11 @@ public class NPCSpawner : MonoBehaviour {
         }                  
     }
 
+
+	/**
+	 * spawns a new NPC with rotation specified in the
+	 * inspector - a value from 0 to 359 degrees
+	 */ 
 	GameObject getNewNpc(){
 		int randomInt = UnityEngine.Random.Range(0, (npc.Length) );
 
