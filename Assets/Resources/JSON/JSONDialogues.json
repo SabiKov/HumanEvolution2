@@ -14,15 +14,15 @@
       {
         "location" : "Introduction",
         "title" : "The Stone Age",
-        "description" : "The dawn of man's evolution, checkout Stonehenge!",
+        "description" : "The Stone Age was a broad prehistoric period during which stone was widely used to make implements with a sharp edge, a point, or a percussion surface. The period lasted roughly 3.4 million years, and ended between 6000 BCE and 2000 BCE with the advent of metalworking.",
         "learn_more" : [
           {
-          "topic" : "Stone Age Topic 1",
-          "detail" : "Details about topic 1"
+          "topic" : "Food",
+          "detail" : "Food sources of the Palaeolithic hunter-gatherers were wild plants and animals harvested from the environment. They liked animal organ meats, including the livers, kidneys and brains. Large seeded legumes were part of the human diet long before the agricultural revolution, as is evident from archaeobotanical finds from the Mousterian layers of Kebara Cave, in Israel.[61] Moreover, recent evidence indicates that humans processed and consumed wild cereal grains as far back as 23,000 years ago in the Upper Paleolithic"
           }
           {
-          "topic" : "Stone Age Topic 2",
-          "detail" : "Details about topic 2"
+          "topic" : "Shelter",
+          "detail" : "Around 2 million years ago, Homo habilis is believed to have constructed the first man-made structure in East Africa, consisting of simple arrangements of stones to hold branches of trees in position. A similar stone circular arrangement believed to be around 380,000 years old was discovered at Terra Amata, near Nice, France. (Concerns about the dating have been raised, see Terra Amata). Several human habitats dating back to the Stone Age have been discovered around the globe, including an animal hide tent dated to around 15000 to 10000 BCE, in the Magdalenian, was discovered at Plateau Parain, France."
           }
         ]
       }
@@ -38,16 +38,16 @@
         "description" : "The Renaissance was a period in Europe, from the 14th to the 17th century, considered the bridge between the Middle Ages and modern history. It started as a cultural movement in Italy in the Late Medieval period and later spread to the rest of Europe, marking the beginning of the Early Modern Age.",
         "learn_more" : [
           {
-          "topic" : "Renaissance topic 1",
-          "detail" : "more info on topic 1"
+          "topic" : "Leonardo daVinci",
+          "detail" : "Leonardo da Vinci (15 April 1452 – 2 May 1519) was an Italian polymath whose areas of interest included invention, painting, sculpting, architecture, science, music, mathematics, engineering, literature, anatomy, geology, astronomy, botany, writing, history, and cartography. He has been variously called the father of paleontology, ichnology, and architecture, and is widely considered one of the greatest painters of all time. Sometimes credited with the inventions of the parachute, helicopter and tank, his genius epitomized the Renaissance humanist ideal."
           }
           {
-          "topic" : "Renaissance topic 2",
-          "detail" : "more info on topic 2"
+          "topic" : "Sir Francis Bacon",
+          "detail" : "Sir Francis Bacon, 1st Viscount St Alban (22 January 1561 – 9 April 1626) was an English philosopher, statesman, scientist, jurist, orator, essayist and author. He served both as Attorney General and Lord Chancellor of England. After his death, he remained extremely influential through his works, especially as philosophical advocate and practitioner of the scientific method during the scientific revolution"
           }
           {
-          "topic" : "Renaissance topic 3",
-          "detail" : "more info on topic 3"
+          "topic" : "Galileo Galilei",
+          "detail" : "Galileo Galilei was an Italian astronomer, physicist, engineer, philosopher, and mathematician who played a major role in the scientific revolution during the Renaissance. Galileo has been called the 'father of observational astronomy', the 'father of modern physics', and the 'father of science'. His contributions to observational astronomy include the telescopic confirmation of the phases of Venus, the discovery of the four largest satellites of Jupiter (named the Galilean moons in his honour), and the observation and analysis of sunspots. Galileo also worked in applied science and technology, inventing an improved military compass and other instruments."
           }
           {
           "topic" : "Renaissance topic 4",
