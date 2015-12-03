@@ -14,7 +14,7 @@ GameObject:
   - 65: {fileID: 6528556}
   - 114: {fileID: 11499168}
   m_Layer: 0
-  m_Name: Badge
+  m_Name: Badge50
   m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   MovingSpeed: 0
   GameItemType: 0
   AnimationType: 0
-  AddedScoreValue: 20
+  AddedScoreValue: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -137,6 +137,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AddedScoreValue
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

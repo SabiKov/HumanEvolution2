@@ -1,19 +1,18 @@
-﻿/*public enum InventoryItemTypes {
-    HEALTH,
-    TOOL,
-    MATERIAL,
-    BADGE,
-    SPECIAL,
-    OTHER
-}*/
-
+﻿
+/// <summary>
+/// Holds number of available pages/chapters
+/// </summary>
 public enum ChapterTypes
 {
     CHAPTER_1,
     CHAPTER_2,
-    CHAPTER_3
+    CHAPTER_3,  // skipped, lack of scene_3
+    CHAPTER_4
 }
 
+/// <summary>
+/// Holds the state of the inventory
+/// </summary>
 public enum InventoryAnimationStates
 {
     OPENING,
@@ -21,6 +20,9 @@ public enum InventoryAnimationStates
     NONE
 }
 
+/// <summary>
+/// Holds type of inventory item
+/// </summary>
 public enum GameItemTypes
 {
     INVENTORY_ITEM,
@@ -28,6 +30,9 @@ public enum GameItemTypes
     SMALL_DAMAGE
 }
 
+/// <summary>
+/// Holds Type of animation control
+/// </summary>
 public enum GameItemAnimationTypes
 {
     ANIM_ROTATE,

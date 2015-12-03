@@ -1,43 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &182794
+--- !u!1 &161116
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 469732}
-  - 33: {fileID: 3305680}
-  - 23: {fileID: 2356638}
-  - 95: {fileID: 9529426}
-  - 65: {fileID: 6500250}
-  - 114: {fileID: 11450076}
+  - 4: {fileID: 483174}
+  - 33: {fileID: 3352544}
+  - 23: {fileID: 2393040}
+  - 95: {fileID: 9592516}
+  - 65: {fileID: 6593784}
+  - 114: {fileID: 11436742}
   m_Layer: 0
-  m_Name: Chapter_Scene_4
+  m_Name: Chapter_Scene_3
   m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &469732
+--- !u!4 &483174
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 131.8862, y: 1.05999994, z: 58.5003853}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2356638
+--- !u!23 &2393040
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,32 +56,32 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3305680
+--- !u!33 &3352544
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_Mesh: {fileID: 4300000, guid: ae38f96e1852a684fb28c1bfd5d6336d, type: 3}
---- !u!65 &6500250
+--- !u!65 &6593784
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .00827713031, y: .0225175153, z: .017061891}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9529426
+--- !u!95 &9592516
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ae38f96e1852a684fb28c1bfd5d6336d, type: 3}
   m_Controller: {fileID: 0}
@@ -92,12 +92,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11450076
+--- !u!114 &11436742
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182794}
+  m_GameObject: {fileID: 161116}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfbb06c7449a444fa93ec4d7819e5d7, type: 3}
@@ -108,7 +108,7 @@ MonoBehaviour:
   MovingSpeed: 0
   GameItemType: 0
   AnimationType: 0
-  InventoryItem: {fileID: 199080, guid: df8f675caa93a4a4f868def5baa3e3eb, type: 2}
+  InventoryItem: {fileID: 199080, guid: 18bb14b9e1a9f094ca8c54c4bacf9393, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -117,36 +117,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: InventoryItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spriteNeutral
-      value: 
-      objectReference: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: spriteHighlighted
-      value: 
-      objectReference: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: itemType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: stockSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: InventoryItem
       value: 
-      objectReference: {fileID: 199080, guid: df8f675caa93a4a4f868def5baa3e3eb, type: 2}
+      objectReference: {fileID: 199080, guid: 18bb14b9e1a9f094ca8c54c4bacf9393, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 182794}
+  m_RootGameObject: {fileID: 161116}
   m_IsPrefabParent: 1
