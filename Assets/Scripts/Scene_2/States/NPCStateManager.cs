@@ -93,72 +93,21 @@ public class NPCStateManager
 		}
 		
 	}	
-}
 
-public abstract class NPCState
-{
-	protected Dictionary<Transition, StateID> transitionMap = new Dictionary<Transition, StateID>();
-	protected StateID stateID;
-	public StateID ID { get { return stateID; } }
-	private NPCState currentState;
-	public NPCState CurrentState { get { return currentState; } }
-	protected GameObject player, npc;
-	
-	public void AddTransition(Transition transition, StateID id)
+	public List<NPCState> CurrentManagerStates()
 	{
-		if (transition == Transition.NullTransition)
-		{
-			Debug.LogError("NPCState AddTransition(): NullTransition is not allowed for a real transition");
-			return;
-		}
-		
-		if (id == StateID.NullStateID)
-		{
-			Debug.LogError("NPCState AddTransition(): NullStateID is not allowed for a real ID");
-			return;
-		}
-		
-		if (transitionMap.ContainsKey(transition))
-		{
-			Debug.LogError("NPCState AddTransition(): " + stateID.ToString() + " already has transition " + 
-			               transition.ToString());
-			return;
-		}
-		
-		transitionMap.Add(transition, id);
+		return states;
 	}
 	
-	public void DeleteTransition(Transition transition)
+	public bool CheckForState(NPCState inList)
 	{
-		if (transition == Transition.NullTransition)
+		foreach (NPCState state in states)
 		{
-			Debug.LogError("NPCState DeleteTransition(): NullTransition is not allowed");
-			return;
+			if (state == inList)
+			{
+				return true;
+			}
 		}
-		
-		if (transitionMap.ContainsKey(transition))
-		{
-			transitionMap.Remove(transition);
-			return;
-		}
-		Debug.LogError("NPCState DeleteTransition(): " + transition.ToString() + " is not on " + 
-		               stateID.ToString() + " transition list");
+		return false;
 	}
-	
-	public StateID GetOutputState(Transition transition)
-	{
-		if (transitionMap.ContainsKey(transition))
-		{
-			return transitionMap[transition];
-		}
-		return StateID.NullStateID;
-	}
-	
-	public virtual void OnStateEntered() { }
-	
-	public virtual void OnStateExit() { } 
-	
-	public abstract void TransitionCondition();
-	
-	public abstract void StateUpdate();
 }
