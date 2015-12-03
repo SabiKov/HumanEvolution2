@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// Instantiate PlayerModel class
     /// </summary>
     private PlayerModel playerModel;
+    private int scoreCarryOn;
 
     /// <summary>
     /// Instantiate the interfaces
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     {
         Instance = this;
         this.Init();
+        DontDestroyOnLoad(ScorePanel);
     }
 
     /// <summary>
@@ -56,7 +58,6 @@ public class PlayerController : MonoBehaviour, IPlayerController {
             this.scoreSystem = this.ScorePanel.GetComponent<IScorePanelController>();
     }
 
-
     /// <summary>
     /// Handle physics collider 
     /// </summary>
@@ -67,6 +68,8 @@ public class PlayerController : MonoBehaviour, IPlayerController {
             return;
 
         var itemScript = item.gameObject.GetComponent<AbstractGameItemController>();
+
+        Debug.Log("Player Controller item" + itemScript);
         if (itemScript == null)
             return;
 
@@ -119,6 +122,7 @@ public class PlayerController : MonoBehaviour, IPlayerController {
         if (inventoryItem == null || this.inventorySystem == null)
             return;
 
+        Debug.Log("Player Controller add InventoryItem" + inventoryItem);
         this.inventorySystem.AddInventoryItem(inventoryItem);
     }
 

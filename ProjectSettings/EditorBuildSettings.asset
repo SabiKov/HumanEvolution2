@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_4/scene_4.unity
   - enabled: 1
     path: Assets/Scenes/Scene_Login/Scene_login.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu_Scenes/GameWon.unity

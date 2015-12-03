@@ -5,7 +5,7 @@
     /// </summary>
     private const string CHAPTER_NAME_1 = "scene_2_exterior";
     private const string CHAPTER_NAME_2 = "scene_4";
-    private const string CHAPTER_NAME_3 = "game_win_scene";
+    private const string CHAPTER_NAME_3 = "GameWon";
 
 
     private string nextSceneName;

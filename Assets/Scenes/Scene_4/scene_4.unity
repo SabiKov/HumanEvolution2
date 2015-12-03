@@ -4362,6 +4362,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11450076, guid: 8987e972c54813c4894d5a8d0e2bc83e, type: 2}
+      propertyPath: InventoryItem
+      value: 
+      objectReference: {fileID: 199080, guid: df8f675caa93a4a4f868def5baa3e3eb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8987e972c54813c4894d5a8d0e2bc83e, type: 2}
   m_IsPrefabParent: 0
@@ -5310,7 +5314,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1651660471}
   m_Layer: 0
-  m_Name: TEST_INVENTORY_OBJECTS
+  m_Name: InventorySystemObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7135,6 +7139,10 @@ Prefab:
     - target: {fileID: 22400732, guid: bf21ab5efdea9644c9c99f63b5fc84b5, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460962, guid: bf21ab5efdea9644c9c99f63b5fc84b5, type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf21ab5efdea9644c9c99f63b5fc84b5, type: 2}
