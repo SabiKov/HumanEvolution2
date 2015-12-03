@@ -21,7 +21,7 @@ public class DoorBehaviour : MonoBehaviour
 		{
 			if (!source.isPlaying)
 			{
-				player.unfreezePlayer();
+				player.ReleasePlayer();
 				Application.LoadLevel (loadLevelString);
 			}
 		}
@@ -29,9 +29,7 @@ public class DoorBehaviour : MonoBehaviour
 	
 	private void OnTriggerEnter(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			message.SetActive(true);
 		}		
@@ -39,9 +37,7 @@ public class DoorBehaviour : MonoBehaviour
 
 	private void OnTriggerExit(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			message.SetActive(false);
 		}		
@@ -51,7 +47,7 @@ public class DoorBehaviour : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.X))
 		{
-			player.freezePlayer();
+			player.FreezePlayer();
 			opening = true;
 			source.PlayOneShot(open, 1);
 		}

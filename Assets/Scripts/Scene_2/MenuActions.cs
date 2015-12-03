@@ -7,11 +7,11 @@ public class MenuActions : MonoBehaviour
 
 	public void MENU_ACTION_SetTask()
 	{
-		forNPC.GetComponent<NPCController> ().playerHelping(true);
+		forNPC.GetComponent<NPCController> ().PlayerHelping(true);
 	}
 
 	public void MENU_ACTION_Finished()
 	{
-		forNPC.GetComponent<NPCController> ().setFinished(true);
+		forNPC.GetComponent<NPCController> ().SetFinished(true);
 	}
 }

@@ -16,6 +16,7 @@ public class NPCController : MonoBehaviour
 	public Transform[] path;
 	int currentPath;
 	protected bool taskSet, offer, talking, contact, finished, allItems;
+	public string questItem;
 	
 	public void SetTransition(Transition transition) { manager.PerformTransition(transition); }
 	
@@ -59,9 +60,7 @@ public class NPCController : MonoBehaviour
 
 	private void OnTriggerEnter(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			contact = true;
 		}
@@ -80,15 +79,13 @@ public class NPCController : MonoBehaviour
 	
 	private void OnTriggerExit(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			contact = false;
 		}		
 	}
 
-	public void followRoutine ()
+	public void FollowRoutine ()
 	{
 		Vector3 vel = GetComponent<Rigidbody>().velocity;
 		Vector3 moveDir = path[currentPath].position - transform.position;
@@ -114,14 +111,14 @@ public class NPCController : MonoBehaviour
 		GetComponent<Rigidbody>().velocity = vel;
 	}
 	
-	public void trackPlayer()
+	public void TrackPlayer()
 	{
 		Vector3 playerPosition = 
 			new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
 		transform.LookAt(playerPosition);
 	}
 
-	public void manageDialogue()
+	public void ManageDialogue()
 	{
 		if(contact)
 		{
@@ -149,7 +146,7 @@ public class NPCController : MonoBehaviour
 		}
 	}
 	
-	public void setUpTask()
+	public void SetUpTask()
 	{
 		item_1.GetComponent<MeshRenderer>().enabled = true;
 		item_1.GetComponent<Collider>().enabled = true;
@@ -159,46 +156,40 @@ public class NPCController : MonoBehaviour
 		item_3.GetComponent<Collider>().enabled = true;
 	}
 
-	public void playerHelping(bool helping)
+	public void PlayerHelping(bool helping)
 	{
 		talking = false;
-		manageDialogue ();
-		setUpTask ();
+		ManageDialogue ();
+		SetUpTask ();
 		contact = false;
-		manageDialogue ();
+		ManageDialogue ();
 		taskSet = helping;
 	}
 
-	public bool getTaskSet()
+	public bool GetTaskSet()
 	{
 		return taskSet;
 	}
 
-	public void setTaskSet(bool set)
+	public void SetTaskSet(bool set)
 	{
 		taskSet = set;
 	}
 
-	public bool getAllItems()
-	{
-		if (player.GetComponent<PlayerScene2> ().getItems () > 2)
-		{
-			allItems = true;
-			return allItems;
-		}
-		else
-			return false;
-	}
-
-	public void setFinished(bool finished)
+	public void SetFinished(bool finished)
 	{
 		this.finished = finished;
 		thanks.SetActive(false);
 		popup.SetActive(false);
 	}
 
-	public bool getFinished()
+	public bool GetFinished()
 	{
 		return finished;
+	}
+
+	public string QuestItem()
+	{
+		return questItem;
 	}
 }

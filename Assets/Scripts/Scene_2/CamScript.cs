@@ -5,19 +5,15 @@ public class CamScript : MonoBehaviour
 {
 	private void OnTriggerEnter(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Wall" == tag || "Door" == tag)
+		if(c.gameObject.CompareTag("Wall") || c.gameObject.CompareTag("Door"))
 		{
 			c.GetComponent<MeshRenderer>().enabled = false;
-		}		
+		}
 	}
-
+	
 	private void OnTriggerExit(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Wall" == tag || "Door" == tag)
+		if(c.gameObject.CompareTag("Wall") || c.gameObject.CompareTag("Door"))
 		{
 			c.GetComponent<MeshRenderer>().enabled = true;
 		}		

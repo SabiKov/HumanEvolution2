@@ -1437,6 +1437,7 @@ MonoBehaviour:
   path:
   - {fileID: 1432006425}
   - {fileID: 652872173}
+  questItem: 
 --- !u!135 &623297217
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1806,6 +1807,10 @@ Prefab:
       propertyPath: message
       value: 
       objectReference: {fileID: 1681935549}
+    - target: {fileID: 11406236, guid: cc33cfa36db63f145a12731b3b8fda31, type: 2}
+      propertyPath: loadLevelString
+      value: scene_2_exterior
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc33cfa36db63f145a12731b3b8fda31, type: 2}
   m_IsPrefabParent: 0
