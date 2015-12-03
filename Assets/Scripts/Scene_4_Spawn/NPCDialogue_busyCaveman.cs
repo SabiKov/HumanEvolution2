@@ -4,11 +4,11 @@ using System;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.Cameras;
 
-public class NPCDialogue_busy : MonoBehaviour {
+public class NPCDialogue_busyCaveman : MonoBehaviour {
 	
 	//String arrays to hold dialogue info
-	String[] NPCTalk = new String[7];
-	String[] PCTalk = new String[7];
+	String[] NPCTalk = new String[4];
+	String[] PCTalk = new String[4];
 	int myIndex = 0;
 	
 	//A variable to hold thre time value during dialogue game-stop
@@ -18,28 +18,22 @@ public class NPCDialogue_busy : MonoBehaviour {
 	bool myTalking = false;
 	GameObject firstPersonControllerCamera;
 	
-	
+	//reference to player script
+	//GameObject playerScript;
 	
 	void Start()
 	{
-
 		//Initialize conversation values.
 		//must be the same length each for this simple dialogue exchange
-		NPCTalk[0] = "What do you want, ruffian";
-		NPCTalk[1] = "Can I help you";
-		NPCTalk[2] = "No i'v no where to rush off too, unlike everyone else";
-		NPCTalk[3] = "Actually I'm out of work at the moment";
-		NPCTalk[4] = "I'm an electrician. A good one";
-		NPCTalk[5] = "No problem. It'll cost you though";
-		NPCTalk[6] = "10 euro should be enough";
-		
+		NPCTalk[0] = "Hello";
+		NPCTalk[1] = "Ug, What do you want";
+		NPCTalk[2] = "Sorry, busy building stonehenge";
+		NPCTalk[3] = "I did see some thing near the mushrooms";
+
 		PCTalk[0] = "Hi";
-		PCTalk[1] = "You aren't rushing around like everyone else?";
-		PCTalk[2] = "Why's that then.";
-		PCTalk[3] = "Thats too bad. What did you work at?";
-		PCTalk[4] = "Really. Would you be able to fix a set of wonky traffic lights?";
-		PCTalk[5] = "How much do you want?";
-		PCTalk[6] = "Ok then I'll try to raise the cash. See you later";
+		PCTalk[1] = "Actually, i'm looking for a book";
+		PCTalk[2] = "...please";
+		PCTalk[3] = "Wow he was in a hurry!";
 	}
 	
 	
@@ -49,7 +43,7 @@ public class NPCDialogue_busy : MonoBehaviour {
 			
 			//Build the little on-screen dialogue box
 			GUI.BeginGroup(new Rect(Screen.width/4, (Screen.height/3)*2, Screen.width/2, Screen.height/3));
-			GUI.Box(new Rect(0, 0, 400, 300), "You strike up a conversation\n with a busy pedestrian");
+			GUI.Box(new Rect(0, 0, 400, 300), "You strike up a conversation with a \nfriendly looking person you meet on the street");
 			GUI.EndGroup();
 			
 			///GUI.Label(new Rect (40, 200, 350, 120), NPCTalk[myIndex]);
@@ -75,8 +69,9 @@ public class NPCDialogue_busy : MonoBehaviour {
 			
 			if (GUI.Button(new Rect(250,570,300,25), "Goodbye!"))
 			{
-				//myTalking = false;
 				UnPauseGame ();
+				//give the player some money
+				//playerScript.giveCash(1);
 			}
 		}
 	}
@@ -135,5 +130,30 @@ public class NPCDialogue_busy : MonoBehaviour {
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

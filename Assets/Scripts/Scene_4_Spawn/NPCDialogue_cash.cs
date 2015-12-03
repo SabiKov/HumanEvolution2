@@ -90,7 +90,7 @@ public class NPCDialogue_cash : MonoBehaviour {
 		if (colide.gameObject.tag == "Player")
 		{
 			//freeze mouse-look
-			//colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
+			colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
 
 			Debug.Log("met player");
 			myTalking = true;
@@ -107,7 +107,7 @@ public class NPCDialogue_cash : MonoBehaviour {
 		if (colide.gameObject.tag == "Player")
 		{
 			//un-freeze mouse-look
-			//colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
+			colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
 
 			Debug.Log("Bye bye player");
 			myTalking = false;
