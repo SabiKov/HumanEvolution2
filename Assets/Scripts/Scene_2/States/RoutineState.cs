@@ -25,7 +25,7 @@ public class RoutineState : NPCState
 	
 	public override void StateUpdate()
 	{
-		npc.GetComponent<NPCController> ().followRoutine ();
+		npc.GetComponent<NPCController> ().FollowRoutine ();
 	}
 	
 	public override void OnStateEntered ()

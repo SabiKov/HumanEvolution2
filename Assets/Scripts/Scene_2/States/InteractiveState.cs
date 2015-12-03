@@ -14,14 +14,14 @@ public class InteractiveState : NPCState
 		
 	public override void TransitionCondition()
 	{
-		if (npc.GetComponent<NPCController>().getTaskSet())
+		if (npc.GetComponent<NPCController>().GetTaskSet())
 			npc.GetComponent<NPCController>().SetTransition(Transition.SetPlayerTask);
 	}
 		
 	public override void StateUpdate()
 	{
-		npc.GetComponent<NPCController> ().trackPlayer();
-		npc.GetComponent<NPCController> ().manageDialogue();
+		npc.GetComponent<NPCController> ().TrackPlayer();
+		npc.GetComponent<NPCController> ().ManageDialogue();
 	}
 
 	public override void OnStateEntered ()

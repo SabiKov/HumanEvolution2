@@ -14,14 +14,14 @@ public class EndState : NPCState
 
 	public override void TransitionCondition()
 	{
-		if (npc.GetComponent<NPCController>().getFinished())
+		if (npc.GetComponent<NPCController>().GetFinished())
 			npc.GetComponent<NPCController>().SetTransition(Transition.AllDone);
 	}
 
 	public override void StateUpdate()
 	{
-		npc.GetComponent<NPCController> ().trackPlayer();
-		npc.GetComponent<NPCController> ().manageDialogue();
+		npc.GetComponent<NPCController> ().TrackPlayer();
+		npc.GetComponent<NPCController> ().ManageDialogue();
 	}
 
 	public override void OnStateEntered ()
