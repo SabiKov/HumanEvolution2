@@ -7,6 +7,7 @@ public class RoutineState : NPCState
 {
 	private int currentWayPoint;
 	private Transform[] waypoints;
+	private bool change;
 	
 	public RoutineState(GameObject player, GameObject npc) 
 	{
@@ -17,15 +18,23 @@ public class RoutineState : NPCState
 	
 	public override void TransitionCondition()
 	{
-		if(!GameObject.Find ("Infopoint") && !player.GetComponent<PlayerScene2> ().taskCompleted)
+		Debug.Log ("TransitionCondition - change = "+change);
+		if(change)
 		{
 			npc.GetComponent<NPCController>().SetTransition(Transition.PlayerLearning);
 		}
+
 	}
 	
 	public override void StateUpdate()
 	{
-		npc.GetComponent<NPCController> ().FollowRoutine ();
+		npc.GetComponent<NPCController> ().FollowRoutine();
+		if(npc.GetComponent<NPCController>().GetLearning())
+		{
+			change = true;
+			Debug.Log ("StateUpdate - change = "+change);
+
+		}
 	}
 	
 	public override void OnStateEntered ()

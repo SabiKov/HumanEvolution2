@@ -11,7 +11,15 @@ TagManager:
   - Door
   - Wall
   - Introduction
-  - Leonardo
+  - Leonardo_House
+  - Item_2
+  - Item_1
+  - LearnInfo
+  - Background
+  - PressX
+  - Item_3
+  - Infopoint
+  - Leonardo_NPC
   layers:
   - Default
   - TransparentFX
