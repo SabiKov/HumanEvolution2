@@ -1,18 +1,34 @@
 using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.Characters.ThirdPerson;
+using System.Collections.Generic;
+using System.IO;
+using System;
+using SimpleJSON;
 
 public class PlayerScene2 : MonoBehaviour
 {
 	public PlayerScene2 player;
-	public bool learning{get; set;}
-	public bool taskCompleted{get; set;}
+	public TextAsset playerJSON;
+	private JSONNode dictionaryObject;
+	public string[] learningTopics;
+	protected Dictionary<string, bool> playerLearned;
+
+	void Start()
+	{
+		playerLearned = new Dictionary<string, bool>();
+		for(int i=0; i<learningTopics.Length; i++)
+		{
+			playerLearned.Add(learningTopics[i], false);
+		}
+		SetJSON();
+
+	}
 	
 	public void Awake()
 	{
-		DontDestroyOnLoad (this);
+		DontDestroyOnLoad(this);
 	}
-
+	
 	public void Update()
 	{
 
@@ -39,4 +55,39 @@ public class PlayerScene2 : MonoBehaviour
 		return true;
 	}
 
+	public void PlayerHasLearned(string topic)
+	{
+		if(playerLearned.ContainsKey(topic))
+		{
+			playerLearned[topic] = true;
+		}
+		Debug.Log ("PlayerHasLearned("+playerLearned[topic]+")");
+	}
+
+	public bool CheckWhatPlayerLearned(string topic)
+	{
+		Debug.Log (playerLearned.Count+" : "+playerLearned[topic]);
+		if(playerLearned[topic])
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}		
+	}
+
+	void SetJSON()
+	{
+		JSONNode json = JSON.Parse(playerJSON.text);
+		int i=0;
+		foreach(var entry in playerLearned)
+		{
+			Debug.Log ("Found an entry");
+			json[0]["playerLearned"][-1] = entry.Key;
+			json[0]["playerLearned"][entry.Key] = entry.Value.ToString();
+			i++;
+		}
+		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
+	}
 }

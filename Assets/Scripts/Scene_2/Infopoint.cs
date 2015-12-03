@@ -47,10 +47,6 @@ public class Infopoint : MonoBehaviour
 		{
 			if(offer)
 				offer = false;
-			else if(finished)
-			{
-				Destroy(gameObject);
-			}
 		}		
 	}
 	
