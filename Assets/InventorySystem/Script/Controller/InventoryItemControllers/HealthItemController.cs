@@ -6,7 +6,7 @@ public class HealthItemController : AbstractInventoryItemController {
     /// Declare the healing value of the inventory health item
     /// </summary>
     [Header("Healing Settings")]
-    public int HealingValue = 20;
+    public int healingValue = 20;
 
 
     /// <summary>
@@ -24,10 +24,10 @@ public class HealthItemController : AbstractInventoryItemController {
     /// </summary>
     private void ChangePlayerHealth()
     {
-        if (PlayerController.Instance == null)
+        if (PlayerController.instance == null)
             return;
 
-        PlayerController.Instance.HealPlayer(HealingValue);
+        PlayerController.instance.HealPlayer(healingValue);
 
         base.DoDestory();
     }

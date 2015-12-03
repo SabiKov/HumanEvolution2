@@ -58,9 +58,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemDescriptior:
-    Name: Chapter load
-    Description: Load next chapter.
-  ChapterType: 2
+    Name: Congratulation!
+    Description: You have learned all your lessons.
+  ChapterType: 3
 --- !u!114 &11493032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,7 +169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ChapterType
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -178,11 +178,11 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Name
-      value: Level Up
+      value: Congratulation!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Description
-      value: Well Done!
+      value: You have learned all your lessons.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

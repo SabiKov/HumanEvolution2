@@ -1,16 +1,18 @@
 ﻿public class DamageGameItemController : AbstractGameItemController {
 
-    #region Properties
+    /// <summary>
+    /// Attributes 
+    /// </summary>
+    public int criticalDamageValue = 30;
+    public int normalDamageValue = 20;
 
-    public int CriticalDamageValue = 30;
-    public int NormalDamageValue = 20;
-
-    #endregion
-
+    /// <summary>
+    /// Overrirde abstract method 
+    /// </summary>
     protected override void FireItemEffect()
     {
-        if (PlayerController.Instance != null)
-            PlayerController.Instance.HitPlayer((base.GameItemType == GameItemTypes.DEADLY_DAMAGE) ? CriticalDamageValue : NormalDamageValue);
+        if (PlayerController.instance != null)
+            PlayerController.instance.HitPlayer((base.gameItemType == GameItemTypes.DEADLY_DAMAGE) ? criticalDamageValue : normalDamageValue);
 
    //     base.DoDestroy();
     }

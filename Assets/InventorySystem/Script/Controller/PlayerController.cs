@@ -22,23 +22,22 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// <summary>
     /// Singleton
     /// </summary>
-    public static IPlayerController Instance;
+    public static IPlayerController instance;
 
     /// <summary>
     /// Create public prefab slot
     /// </summary>
-    public GameObject InventoryPanel;
-    public GameObject HealthPanel;
-    public GameObject ScorePanel;
+    public GameObject inventoryPanel;
+    public GameObject healthPanel;
+    public GameObject scorePanel;
 
     /// <summary>
     /// Initializing before the scene starts
     /// </summary>
     public void Awake()
     {
-        Instance = this;
+        instance = this;
         this.Init();
-        DontDestroyOnLoad(ScorePanel);
     }
 
     /// <summary>
@@ -48,14 +47,14 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     {
         this.playerModel = new PlayerModel();
 
-        if (this.InventoryPanel != null)
-            this.inventorySystem = this.InventoryPanel.GetComponent<IInventorySystemController>();
+        if (this.inventoryPanel != null)
+            this.inventorySystem = this.inventoryPanel.GetComponent<IInventorySystemController>();
 
-        if (this.HealthPanel != null)
-            this.healtBarSystem = this.HealthPanel.GetComponent<IHealthBarController>();
+        if (this.healthPanel != null)
+            this.healtBarSystem = this.healthPanel.GetComponent<IHealthBarController>();
 
-        if (this.ScorePanel != null)
-            this.scoreSystem = this.ScorePanel.GetComponent<IScorePanelController>();
+        if (this.scorePanel != null)
+            this.scoreSystem = this.scorePanel.GetComponent<IScorePanelController>();
     }
 
     /// <summary>

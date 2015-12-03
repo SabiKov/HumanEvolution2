@@ -8,10 +8,9 @@
     private const string CHAPTER_NAME_3 = "";
     private const string CHAPTER_NAME_4 = "GameWon";
 
-
     private string nextSceneName;
 
-    public ChapterTypes ChapterType;
+    public ChapterTypes chapterType;
 
     /// <summary>
     /// which chapter is selected the nextSceneName is signed 
@@ -21,7 +20,7 @@
     {
         this.nextSceneName = string.Empty;
 
-        switch(ChapterType) {
+        switch(chapterType) {
             case ChapterTypes.CHAPTER_1:
                 this.nextSceneName = CHAPTER_NAME_1;
                 break;
@@ -35,15 +34,15 @@
                 this.nextSceneName = CHAPTER_NAME_4;
                 break;
         }
-
-        if (PopupController.Instance != null)
-            PopupController.Instance.ShowPopup(base.ItemDescriptior.Description, OnOkButtonClicked);
+        // show on popup selected chapter with descriptor string
+        if (PopupController.instance != null)
+            PopupController.instance.ShowPopup(base.ItemDescriptior.Description, OnOkButtonClicked);
     }
 
     private void OnOkButtonClicked()
     {
-        if(!string.IsNullOrEmpty(this.nextSceneName) && PlayerController.Instance != null)
-           PlayerController.Instance.UseChapter(this.nextSceneName);
+        if(!string.IsNullOrEmpty(this.nextSceneName) && PlayerController.instance != null)
+           PlayerController.instance.UseChapter(this.nextSceneName);
 
         DestroyChapterFromInventory();
     }
@@ -53,7 +52,7 @@
     /// </summary>
     private void DestroyChapterFromInventory()
     {
-        if (PlayerController.Instance == null)
+        if (PlayerController.instance == null)
             return;
 
         base.DoDestory();

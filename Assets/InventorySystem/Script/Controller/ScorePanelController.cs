@@ -7,7 +7,7 @@ public class ScorePanelController : MonoBehaviour, IScorePanelController
     /// <summary>
     ///    Display score on panel 
     /// </summary>
-    public Text ScoreText;
+    public Text scoreText;
 
     /// <summary>
     /// Implement interface method, the integer value is cast into (string)text
@@ -15,8 +15,8 @@ public class ScorePanelController : MonoBehaviour, IScorePanelController
     /// <param name="scoreValue">increase the scoreValue</param>
     public void UpdateScoreText(int scoreValue)
     {
-        if(this.ScoreText != null)
-            this.ScoreText.text = scoreValue.ToString();
+        if(this.scoreText != null)
+            this.scoreText.text = scoreValue.ToString();
     }
 
 }
