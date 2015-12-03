@@ -87,7 +87,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5,
+    m_HighlightedSprite: {fileID: 21300000, guid: 81d3f502a45688443a0fb7a78d272b04,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -140,7 +140,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: fdaae8c76d330f547895b6b93d8ab2c5,
+      objectReference: {fileID: 21300000, guid: 81d3f502a45688443a0fb7a78d272b04,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Sprite

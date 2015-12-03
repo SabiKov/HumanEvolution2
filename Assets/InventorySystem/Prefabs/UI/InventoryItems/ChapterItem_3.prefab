@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11434016}
   - 114: {fileID: 11465374}
   m_Layer: 5
-  m_Name: ChapterItem_1
+  m_Name: ChapterItem_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   ItemDescriptior:
     Name: Chapter load
     Description: Load next chapter.
-  ChapterType: 0
+  ChapterType: 2
 --- !u!114 &11493032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 4b6fd34b1426e0341a8226e33d46b572,
+    m_HighlightedSprite: {fileID: 21300000, guid: fa54b6469904335498e0b51fc4c992be,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 383dead353d0ba8488a2e6e83ef67a3d, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -140,7 +140,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b6fd34b1426e0341a8226e33d46b572,
+      objectReference: {fileID: 21300000, guid: fa54b6469904335498e0b51fc4c992be,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Sprite
@@ -169,7 +169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ChapterType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -178,11 +178,11 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Name
-      value: Chapter load
+      value: Level Up
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Description
-      value: Load next chapter.
+      value: Well Done!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

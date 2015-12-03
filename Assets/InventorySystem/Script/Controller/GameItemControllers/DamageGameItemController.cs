@@ -12,6 +12,6 @@
         if (PlayerController.Instance != null)
             PlayerController.Instance.HitPlayer((base.GameItemType == GameItemTypes.DEADLY_DAMAGE) ? CriticalDamageValue : NormalDamageValue);
 
-        base.DoDestroy();
+   //     base.DoDestroy();
     }
 }

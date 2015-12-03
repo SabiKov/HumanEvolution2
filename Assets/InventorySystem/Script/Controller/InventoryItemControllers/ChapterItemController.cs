@@ -5,7 +5,8 @@
     /// </summary>
     private const string CHAPTER_NAME_1 = "scene_2_exterior";
     private const string CHAPTER_NAME_2 = "scene_4";
-    private const string CHAPTER_NAME_3 = "GameWon";
+    private const string CHAPTER_NAME_3 = "";
+    private const string CHAPTER_NAME_4 = "GameWon";
 
 
     private string nextSceneName;
@@ -30,6 +31,9 @@
             case ChapterTypes.CHAPTER_3:
                 this.nextSceneName = CHAPTER_NAME_3;
                 break;
+            case ChapterTypes.CHAPTER_4:
+                this.nextSceneName = CHAPTER_NAME_4;
+                break;
         }
 
         if (PopupController.Instance != null)
@@ -40,6 +44,19 @@
     {
         if(!string.IsNullOrEmpty(this.nextSceneName) && PlayerController.Instance != null)
            PlayerController.Instance.UseChapter(this.nextSceneName);
+
+        DestroyChapterFromInventory();
+    }
+
+    /// <summary>
+    /// Destroy chapter object after fired
+    /// </summary>
+    private void DestroyChapterFromInventory()
+    {
+        if (PlayerController.Instance == null)
+            return;
+
+        base.DoDestory();
     }
 
 }
