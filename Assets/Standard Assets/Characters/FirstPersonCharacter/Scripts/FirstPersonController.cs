@@ -42,6 +42,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
+		//********************************************
+		// ** daragh changes **
+		private bool inDialogue = false;
+		public void setInDialogueToggle(){
+			inDialogue = !inDialogue;
+		}
+		//********************************************
+
+
         // Use this for initialization
         private void Start()
         {
@@ -231,11 +241,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
-        private void RotateView()
-        {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
-        }
+		
+		//********************************************
+		// ** daragh changes **
+		
+		//********************************************
+		
+		private void RotateView()
+		{
+			if (!inDialogue) {
+				m_MouseLook.LookRotation (transform, m_Camera.transform);
+			}
+		}
 
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
