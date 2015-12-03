@@ -4720,7 +4720,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481222, guid: d921809898974a84d8d89a3a3b9fc670, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 119692, guid: d921809898974a84d8d89a3a3b9fc670, type: 2}
       propertyPath: m_NavMeshLayer

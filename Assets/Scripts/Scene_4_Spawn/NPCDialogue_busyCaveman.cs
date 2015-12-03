@@ -4,11 +4,11 @@ using System;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.Cameras;
 
-public class NPCDialogue_beg : MonoBehaviour {
+public class NPCDialogue_busyCaveman : MonoBehaviour {
 	
 	//String arrays to hold dialogue info
-	String[] NPCTalk = new String[5];
-	String[] PCTalk = new String[5];
+	String[] NPCTalk = new String[4];
+	String[] PCTalk = new String[4];
 	int myIndex = 0;
 	
 	//A variable to hold thre time value during dialogue game-stop
@@ -26,17 +26,14 @@ public class NPCDialogue_beg : MonoBehaviour {
 		//Initialize conversation values.
 		//must be the same length each for this simple dialogue exchange
 		NPCTalk[0] = "Hello";
-		NPCTalk[1] = "Can I help you";
-		NPCTalk[2] = "Sorry i've no spare cash";
-		NPCTalk[3] = "ok, you look a little sad. Here's a euro";
-		NPCTalk[4] = "take care";
+		NPCTalk[1] = "Ug, What do you want";
+		NPCTalk[2] = "Sorry, busy building stonehenge";
+		NPCTalk[3] = "I did see some thing near the mushrooms";
 
-		
 		PCTalk[0] = "Hi";
-		PCTalk[1] = "Actually i'm a little broke at the moment";
+		PCTalk[1] = "Actually, i'm looking for a book";
 		PCTalk[2] = "...please";
-		PCTalk[3] = "Wow thanks dude, I owe you one";
-		PCTalk[4] = "Bye";
+		PCTalk[3] = "Wow he was in a hurry!";
 	}
 	
 	
@@ -89,7 +86,7 @@ public class NPCDialogue_beg : MonoBehaviour {
 		if (colide.gameObject.tag == "Player")
 		{
 			//freeze mouse-look
-			//colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
+			colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
 			
 			Debug.Log("met player");
 			myTalking = true;
@@ -106,7 +103,7 @@ public class NPCDialogue_beg : MonoBehaviour {
 		if (colide.gameObject.tag == "Player")
 		{
 			//un-freeze mouse-look
-			//colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
+			colide.gameObject.GetComponent<FirstPersonController> ().setInDialogueToggle();
 			
 			Debug.Log("Bye bye player");
 			myTalking = false;
@@ -133,6 +130,7 @@ public class NPCDialogue_beg : MonoBehaviour {
 	}
 	
 }
+
 
 
 
