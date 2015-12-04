@@ -666,6 +666,7 @@ Prefab:
     - {fileID: 11400000, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 2}
     - {fileID: 11400002, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 2}
     - {fileID: 11400004, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 2}
+    - {fileID: 11475960, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &216128871
@@ -2798,9 +2799,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852890833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f469885bd1f4f96409d689eca60a8ca6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f2085da4e9a3d9458ae8d0f8ac36d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1852890834}
+  playerJSON: {fileID: 4900000, guid: 53dd9396f0c8b1445b27e20c85aefbc6, type: 3}
+  learningTopics:
+  - davinci_influence
 --- !u!1 &1886559463
 GameObject:
   m_ObjectHideFlags: 0
