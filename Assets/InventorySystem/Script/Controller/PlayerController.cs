@@ -10,7 +10,12 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// Instantiate PlayerModel class
     /// </summary>
     private PlayerModel playerModel;
-    private int scoreCarryOn;
+
+    /// <summary>
+    /// Holds name of the game over scene
+    /// </summary>
+    private const string DEAD_END = "GameOver";
+    private const int MAX_SCORE = 100;
 
     /// <summary>
     /// Instantiate the interfaces
@@ -68,7 +73,7 @@ public class PlayerController : MonoBehaviour, IPlayerController {
 
         var itemScript = item.gameObject.GetComponent<AbstractGameItemController>();
 
-        Debug.Log("Player Controller item" + itemScript);
+        Debug.Log("Player Controller item: " + itemScript);
         if (itemScript == null)
             return;
 
@@ -85,6 +90,12 @@ public class PlayerController : MonoBehaviour, IPlayerController {
             return;
 
         this.playerModel.Health = (int)Mathf.Clamp(this.playerModel.Health - amount, 0.0f, PlayerModel.MAX_HEALTH);
+  //      Debug.Log("Current Player Health: " + this.playerModel.Health);
+        
+        // When the player's health 0, then game over
+        if (this.playerModel.Health == 0)
+             Application.LoadLevel(DEAD_END);
+
         this.UpdateHealthBar();
     }
 
@@ -99,8 +110,18 @@ public class PlayerController : MonoBehaviour, IPlayerController {
 
         this.playerModel.Score += value;
 
+        // Make sure score can't get more than 100 %
         if (scoreSystem != null)
-            scoreSystem.UpdateScoreText(this.playerModel.Score);
+        {
+            if (this.playerModel.Score > 100)
+            {
+                this.playerModel.Score = MAX_SCORE;
+                scoreSystem.UpdateScoreText(this.playerModel.Score);
+            }
+            else {
+                scoreSystem.UpdateScoreText(this.playerModel.Score);
+            }
+        }
     }
 
     public void HealPlayer(int amount)

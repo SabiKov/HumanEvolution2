@@ -58,9 +58,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemDescriptior:
-    Name: Well Done!!! You have learned the Stone Age lesson.
-    Description: Are you ready for the next lesson?
-  ChapterType: 0
+    Name: chapter1
+    Description: Well Done!!!                                                                        You
+      have learned the Stone Age lesson.                                          Are
+      you ready for the next lesson?
+  chapterType: 0
 --- !u!114 &11493032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,11 +180,13 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Name
-      value: Well Done!!! You have learned the Stone Age lesson.
+      value: chapter1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Description
-      value: Are you ready for the next lesson?
+      value: Well Done!!!                                                                        You
+        have learned the Stone Age lesson.                                          Are
+        you ready for the next lesson?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -33,10 +33,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b78e115e9da8734eac80e3190edb8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSize: {x: 4, y: 4}
-  Spacing: {x: 0, y: 0}
-  InventorySlotItem: {fileID: 182824, guid: db315d211b3d7cc419ca9e065a7a0a39, type: 2}
-  AnimationSpeed: 10
+  itemSize: {x: 5, y: 5}
+  spacing: {x: 0, y: 0}
+  inventorySlotItem: {fileID: 182824, guid: db315d211b3d7cc419ca9e065a7a0a39, type: 2}
+  animationSpeed: 10
 --- !u!114 &11460612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,7 +133,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 10.4700003}
+  m_AnchoredPosition: {x: 0, y: 7.62939453e-05}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!225 &22544026
@@ -153,7 +153,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196384}

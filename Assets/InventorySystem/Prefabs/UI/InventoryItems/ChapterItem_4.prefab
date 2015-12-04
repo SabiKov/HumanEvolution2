@@ -58,9 +58,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemDescriptior:
-    Name: Congratulation!
-    Description: You have learned all your lessons.
-  ChapterType: 3
+    Name: chapter4
+    Description: '     Congratulation!                                            You
+      have learned all your lessons.          Game Won!'
+  chapterType: 3
 --- !u!114 &11493032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,11 +179,16 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Name
-      value: Congratulation!
+      value: chapter4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Description
-      value: You have learned all your lessons.
+      value: '     Congratulation!                                            You
+        have learned all your lessons.          Game Won!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chapterType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
