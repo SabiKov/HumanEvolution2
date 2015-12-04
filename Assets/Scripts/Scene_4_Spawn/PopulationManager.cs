@@ -8,7 +8,7 @@ using System.Collections;
 public class PopulationManager : MonoBehaviour {
 
     //max population - unfortuanetly cant make public (bad stuff happens!)
-	private int MAX_POPULATION = 12;
+	private int MAX_POPULATION = 30;
     private static int currentPopulation;
 
 	//lock for singleton creattion
