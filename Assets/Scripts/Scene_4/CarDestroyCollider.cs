@@ -9,15 +9,18 @@ public class CarDestroyCollider : MonoBehaviour {
 	 * Placed on car GameObjects to destroy them at the
 	 * end of the road
 	 */
+
 	private void OnTriggerEnter(Collider c)
 	{
 		string tag = c.tag;
 		
-		if("Car" == tag)
+		if("car" == tag)
 		{
-			Destroy(this.gameObject);
+			Destroy(c.gameObject);
 		}
 	}
+
+
 
 }
 
