@@ -31,9 +31,7 @@ public class Infopoint : MonoBehaviour
 
 	private void OnTriggerEnter(Collider c)
 	{
-		string tag = c.tag;
-		
-		if ("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			offer = true;
 		}		
@@ -41,9 +39,7 @@ public class Infopoint : MonoBehaviour
 	
 	private void OnTriggerExit(Collider c)
 	{
-		string tag = c.tag;
-		
-		if("Player" == tag)
+		if(c.gameObject.CompareTag("Player"))
 		{
 			if(offer)
 				offer = false;
