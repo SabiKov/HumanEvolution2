@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Show and Hide popup GUI
+/// </summary>
 public class SecondTaskPanel : MonoBehaviour {
 
 
@@ -29,7 +32,7 @@ public class SecondTaskPanel : MonoBehaviour {
         string tag = other.tag;
         if ("Player" == tag)
         {
-            display = !display;
+            display = false;
         }
         Debug.Log("Display: " + display);
     }
@@ -39,7 +42,7 @@ public class SecondTaskPanel : MonoBehaviour {
         string tag = other.tag;
         if ("Player" == tag)
         {
-            display = false;
+            display = true;
         }
     }
 }
