@@ -84,7 +84,7 @@ public class PlayerScene2 : MonoBehaviour
 		foreach(var entry in playerLearned)
 		{
 			Debug.Log ("Found an entry");
-			json[0]["playerLearned"][-1] = entry.Key+" : "+entry.Value.ToString();
+			json[0]["playerLearned"][-1][entry.Key] = entry.Value.ToString();
 			i++;
 		}
 		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());

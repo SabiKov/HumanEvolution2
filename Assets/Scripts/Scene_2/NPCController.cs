@@ -63,10 +63,10 @@ public class NPCController : MonoBehaviour
 	{
 		if(c.gameObject.CompareTag("Player"))
 		{
-			if(player.GetComponent<PlayerScene2>().CheckWhatPlayerLearned(questTopic))
+			/*if(player.GetComponent<PlayerScene2>().CheckWhatPlayerLearned(questTopic))
 			{
 				SetLearning(true);
-			}
+			}*/
 			contact = true;
 		}
 	}
