@@ -478,10 +478,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 105548994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea9def8916b252c4aaca5ec1e5c00c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ea70e526152ffa4599516002d7691fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forNPC: {fileID: 623297211}
+  infopoint: {fileID: 0}
+  dialogueJSON: {fileID: 0}
+  scene: 2
+  panelTop: {fileID: 0}
+  panelLeft: {fileID: 0}
+  panelRight: {fileID: 0}
+  questionButton: {fileID: 0}
 --- !u!1 &110001570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 574556595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea9def8916b252c4aaca5ec1e5c00c07, type: 3}
+  m_Script: {fileID: 11500000, guid: cba5aeefebc89854d8f240699c894c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   forNPC: {fileID: 623297211}
@@ -1322,20 +1328,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 623297211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac20a7558ab21a44a57826dc70ad36f, type: 3}
+  m_Script: {fileID: 11500000, guid: 795d0dc7412283e4aabbc30158fe81a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1852890833}
-  item_1: {fileID: 448495261}
-  item_2: {fileID: 386015338}
-  item_3: {fileID: 1588354315}
   popup: {fileID: 110001570}
   dialogue: {fileID: 105548994}
   thanks: {fileID: 574556595}
   path:
-  - {fileID: 1432006425}
   - {fileID: 652872173}
-  questItem: 
+  - {fileID: 1432006425}
+  questItem: charcoal
+  questTopic: davinci_influence
 --- !u!135 &623297217
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2779,7 +2783,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1770443432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa42d8f9b372af4d9289678cabb5670, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbe7e57c2ca7d74eb3d51ddc3d3e980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1852890833 stripped
@@ -2797,7 +2801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f469885bd1f4f96409d689eca60a8ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1852890834}
 --- !u!1 &1886559463
 GameObject:
   m_ObjectHideFlags: 0
