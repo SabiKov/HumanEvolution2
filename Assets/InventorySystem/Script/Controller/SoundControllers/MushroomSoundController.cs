@@ -18,6 +18,7 @@ public class MushroomSoundController : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             if (!audio.isPlaying)
+                audio.Stop();
                 audio.PlayOneShot(impact);
         }
 
