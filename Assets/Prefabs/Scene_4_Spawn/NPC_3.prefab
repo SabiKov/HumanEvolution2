@@ -32,7 +32,7 @@ GameObject:
   - 195: {fileID: 19554212}
   - 114: {fileID: 11415026}
   - 54: {fileID: 5497634}
-  - 114: {fileID: 11499458}
+  - 114: {fileID: 11428142}
   m_Layer: 0
   m_Name: NPC_3
   m_TagString: NPC
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78cf253d6eba28458465566bf0dd9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11499458
+--- !u!114 &11428142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 117032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835ff5c2019f71b489ef3bda2d8fd039, type: 3}
+  m_Script: {fileID: 11500000, guid: 97046dec987719c479c084a953abfa29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &13556242
