@@ -153,20 +153,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 198400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458b1d63e0621ef4a8a1859633ca05f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 548f51f0b03e16f419eae5c6431ff560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   open: {fileID: 8300000, guid: 34ce9571a78fb4842bfb96b220e99765, type: 3}
   player: {fileID: 0}
-  opening: 0
   message: {fileID: 0}
+  loadLevelString: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: open
+      value: 
+      objectReference: {fileID: 8300000, guid: 34ce9571a78fb4842bfb96b220e99765, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 198400}

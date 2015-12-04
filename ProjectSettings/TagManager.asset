@@ -13,6 +13,17 @@ TagManager:
   - Introduction
   - Leonardo_House
   - NPC
+  - Item_2
+  - Item_1
+  - LearnInfo
+  - PressX
+  - Item_3
+  - Background
+  - Harbour
+  - Car
+  - Waypoint
+  - CarSpawnCapsule
+  - Galileo
   layers:
   - Default
   - TransparentFX
