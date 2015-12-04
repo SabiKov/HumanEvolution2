@@ -11,7 +11,8 @@ TagManager:
   - Door
   - Wall
   - Introduction
-  - Leonardo
+  - Leonardo_House
+  - NPC
   layers:
   - Default
   - TransparentFX

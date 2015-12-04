@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This is my basic NPCController, 
  * should be amenable to most task-driven NPCs
  * 
@@ -12,11 +12,12 @@ using UnityEngine;
 public class NPCController : MonoBehaviour
 {
 	private NPCStateManager manager;
-	public GameObject player, item_1, item_2, item_3, popup, dialogue, thanks;
+	public GameObject player, popup, dialogue, thanks;
 	public Transform[] path;
 	int currentPath;
-	protected bool taskSet, offer, talking, contact, finished, allItems;
+	protected bool taskSet, offer, talking, contact, finished, allItems, learning;
 	public string questItem;
+	public string questTopic;
 	
 	public void SetTransition(Transition transition) { manager.PerformTransition(transition); }
 	
@@ -62,6 +63,10 @@ public class NPCController : MonoBehaviour
 	{
 		if(c.gameObject.CompareTag("Player"))
 		{
+			if(player.GetComponent<PlayerScene2>().CheckWhatPlayerLearned(questTopic))
+			{
+				SetLearning(true);
+			}
 			contact = true;
 		}
 	}
@@ -145,22 +150,11 @@ public class NPCController : MonoBehaviour
 			popup.SetActive(false);
 		}
 	}
-	
-	public void SetUpTask()
-	{
-		item_1.GetComponent<MeshRenderer>().enabled = true;
-		item_1.GetComponent<Collider>().enabled = true;
-		item_2.GetComponent<MeshRenderer>().enabled = true;
-		item_2.GetComponent<Collider>().enabled = true;
-		item_3.GetComponent<MeshRenderer>().enabled = true;
-		item_3.GetComponent<Collider>().enabled = true;
-	}
 
 	public void PlayerHelping(bool helping)
 	{
 		talking = false;
 		ManageDialogue ();
-		SetUpTask ();
 		contact = false;
 		ManageDialogue ();
 		taskSet = helping;
@@ -192,4 +186,15 @@ public class NPCController : MonoBehaviour
 	{
 		return questItem;
 	}
+
+	public bool GetLearning()
+	{
+		return learning;
+	}
+	
+	public void SetLearning(bool set)
+	{
+		taskSet = set;
+	}
+
 }
