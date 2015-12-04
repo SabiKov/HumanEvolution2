@@ -61,6 +61,7 @@ public class PlayerScene2 : MonoBehaviour
 		{
 			playerLearned[topic] = true;
 		}
+		SetTopicTrue(topic);
 		Debug.Log ("PlayerHasLearned("+playerLearned[topic]+")");
 	}
 
@@ -87,6 +88,13 @@ public class PlayerScene2 : MonoBehaviour
 			json[0]["playerLearned"][-1][entry.Key] = entry.Value.ToString();
 			i++;
 		}
+		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
+	}
+
+	void SetTopicTrue(string topic)
+	{
+		JSONNode json = JSON.Parse(playerJSON.text);
+		json[0]["playerLearned"][0][topic].Value = "True";
 		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
 	}
 }

@@ -194,7 +194,7 @@ public class NPCController : MonoBehaviour
 	
 	public void SetLearning(bool set)
 	{
-		taskSet = set;
+		learning = set;
 	}
 
 }

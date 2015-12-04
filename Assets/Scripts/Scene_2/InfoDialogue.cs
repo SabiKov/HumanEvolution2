@@ -17,18 +17,18 @@ public class InfoDialogue : MonoBehaviour
 	void Awake()
 	{
 		Debug.Log("InfoDialogue: Awake()");		
-		getJSON ();
+		GetJSON ();
 	}
 
 	void Start ()
 	{
 		Debug.Log("InfoDialogue: Start()");		
-		manageDialogue();
+		ManageDialogue();
 	}
 
 	void onEnable()
 	{		
-		manageDialogue();
+		ManageDialogue();
 	}
 
 	void OnDisable()
@@ -43,7 +43,7 @@ public class InfoDialogue : MonoBehaviour
 		
 	}
 
-	void getJSON()
+	void GetJSON()
 	{
 		ipTAG = infopoint.gameObject.tag;
 		JSONNode json = JSON.Parse(dialogueJSON.text);
@@ -63,7 +63,7 @@ public class InfoDialogue : MonoBehaviour
 		}
 	}
 	
-	public void manageDialogue()
+	public void ManageDialogue()
 	{
 		Debug.Log (infoObject.ToString());
 		panelTop.GetComponent<Text>().text = infoObject["title"];

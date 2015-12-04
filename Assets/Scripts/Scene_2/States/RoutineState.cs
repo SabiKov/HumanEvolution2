@@ -25,7 +25,6 @@ public class RoutineState : NPCState
 	
 	public override void TransitionCondition()
 	{
-		Debug.Log ("TransitionCondition - change = "+change);
 		if(change)
 		{
 			npc.GetComponent<NPCController>().SetTransition(Transition.PlayerLearning);
