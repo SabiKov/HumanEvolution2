@@ -63,15 +63,19 @@ public class PopulationManager : MonoBehaviour {
     }
 
 
-    /*
+	/*
      * A method to reduce the current population figure
      */
-    public void decreaseHeadCount() {
-
-        if ( currentPopulation > 1) {
-            currentPopulation--;
-        }
-    }
+	public bool decreaseHeadCount() {
+		
+		if (currentPopulation >= 1) {
+			currentPopulation--;
+			return true;
+		} 
+		else {
+			return false;
+		}
+	}
 
 
 }

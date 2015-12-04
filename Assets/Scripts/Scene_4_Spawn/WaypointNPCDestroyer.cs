@@ -29,11 +29,12 @@ public class WaypointNPCDestroyer : MonoBehaviour {
         //Debug.Log("collision name = " + colide.gameObject.name);
 
         if (colide.gameObject.tag == "NPC")
-            //if (colide.gameObject.name == "NPC(Clone)")
         {
-            Destroy(colide.gameObject);
-            popManager.decreaseHeadCount();
+			if( popManager.decreaseHeadCount() ){
+				Destroy(colide.gameObject);
+			}       
         }
+
     }
 
 }
