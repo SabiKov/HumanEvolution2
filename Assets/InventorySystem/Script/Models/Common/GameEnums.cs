@@ -27,7 +27,7 @@ public enum GameItemTypes
 {
     INVENTORY_ITEM,
     DEADLY_DAMAGE,
-    SMALL_DAMAGE
+    LEARN_STATION
 }
 
 /// <summary>
