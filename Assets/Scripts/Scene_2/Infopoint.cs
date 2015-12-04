@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Text;
 using System.Collections;
 
@@ -47,10 +47,6 @@ public class Infopoint : MonoBehaviour
 		{
 			if(offer)
 				offer = false;
-			else if(finished)
-			{
-				Destroy(gameObject);
-			}
 		}		
 	}
 	

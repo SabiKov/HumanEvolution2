@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using SimpleJSON;
@@ -80,7 +80,6 @@ public class InfoDialogue : MonoBehaviour
 			rectTransform.offsetMin = new Vector2(10.0f, 5.0f);
 			rectTransform.localScale = new Vector3(0.75f, 0.5f );
 		}
-		//for(int i=0; i<
 	}
 	
 	public void DIALOGUE_BUTTON_CLICK(Button caller)
@@ -93,6 +92,11 @@ public class InfoDialogue : MonoBehaviour
 			if(test.Equals(button))
 			{
 				panelRight.GetComponent<Text>().text = infoObject["learn_more"][i]["detail"];
+				if(infoObject["learn_more"][i]["player_learning"] != null)
+				{
+					GameObject.FindWithTag("Player").GetComponent<PlayerScene2>().PlayerHasLearned(infoObject["learn_more"][i]["player_learning"]);
+					Debug.Log ("Player learned about "+infoObject["learn_more"][i]["player_learning"]);
+				}
 			}
 		}
 	}
