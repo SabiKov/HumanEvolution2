@@ -12,7 +12,7 @@ public class PlayerScene2 : MonoBehaviour
 	private JSONNode dictionaryObject;
 	public string[] learningTopics;
 	protected Dictionary<string, bool> playerLearned;
-
+	
 	void Start()
 	{
 		playerLearned = new Dictionary<string, bool>();
@@ -21,7 +21,7 @@ public class PlayerScene2 : MonoBehaviour
 			playerLearned.Add(learningTopics[i], false);
 		}
 		SetJSON();
-
+		
 	}
 	
 	public void Awake()
@@ -31,12 +31,12 @@ public class PlayerScene2 : MonoBehaviour
 	
 	public void Update()
 	{
-
+		
 	}
 	
 	private void OnTriggerEnter(Collider c)
 	{
-
+		
 	}
 	
 	// Custom method
@@ -49,21 +49,22 @@ public class PlayerScene2 : MonoBehaviour
 	{
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
 	}
-
+	
 	public bool PlayerHasQuestItem(string questItemTag)
 	{
 		return true;
 	}
-
+	
 	public void PlayerHasLearned(string topic)
 	{
 		if(playerLearned.ContainsKey(topic))
 		{
 			playerLearned[topic] = true;
 		}
+		SetTopicTrue(topic);
 		Debug.Log ("PlayerHasLearned("+playerLearned[topic]+")");
 	}
-
+	
 	public bool CheckWhatPlayerLearned(string topic)
 	{
 		Debug.Log (playerLearned.Count+" : "+playerLearned[topic]);
@@ -76,7 +77,7 @@ public class PlayerScene2 : MonoBehaviour
 			return false;
 		}		
 	}
-
+	
 	void SetJSON()
 	{
 		JSONNode json = JSON.Parse(playerJSON.text);
@@ -87,6 +88,13 @@ public class PlayerScene2 : MonoBehaviour
 			json[0]["playerLearned"][-1][entry.Key] = entry.Value.ToString();
 			i++;
 		}
+		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
+	}
+	
+	void SetTopicTrue(string topic)
+	{
+		JSONNode json = JSON.Parse(playerJSON.text);
+		json[0]["playerLearned"][0][topic].Value = "True";
 		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
 	}
 }
