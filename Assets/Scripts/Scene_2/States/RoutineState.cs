@@ -8,6 +8,13 @@ public class RoutineState : NPCState
 	private int currentWayPoint;
 	private Transform[] waypoints;
 	
+
+	public RoutineState()
+	{
+		// Empty Constructor for testing
+		stateID = StateID.RoutineStateID;
+	}
+
 	public RoutineState(GameObject player, GameObject npc) 
 	{
 		base.player = player;
