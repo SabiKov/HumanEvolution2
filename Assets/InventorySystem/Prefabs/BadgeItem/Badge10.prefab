@@ -13,8 +13,10 @@ GameObject:
   - 95: {fileID: 9517222}
   - 65: {fileID: 6528556}
   - 114: {fileID: 11499168}
+  - 82: {fileID: 8266910}
+  - 114: {fileID: 11412730}
   m_Layer: 0
-  m_Name: Badge25
+  m_Name: Badge10
   m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +77,76 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .00224999967, y: .0312244799, z: .0320795849}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8266910
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127458}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9517222
 Animator:
   serializedVersion: 3
@@ -92,6 +164,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11412730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5888cc4f336248a4993f21dc3c56d37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impact: {fileID: 8300000, guid: a49d16e2f90aa8046b60d1df62a6c507, type: 3}
 --- !u!114 &11499168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,12 +187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a5c112e07bcbd4c87c1f3a4b5177a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationLiftingDistance: 2
-  RotationSpeed: 25
-  MovingSpeed: 0
-  GameItemType: 0
-  AnimationType: 0
-  AddedScoreValue: 25
+  animationLiftingDistance: .200000003
+  rotationSpeed: 50
+  movingSpeed: 3
+  gameItemType: 0
+  animationType: 0
+  addedScoreValue: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -140,7 +224,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: AddedScoreValue
-      value: 25
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: addedScoreValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animationLiftingDistance
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: movingSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: impact
+      value: 
+      objectReference: {fileID: 8300000, guid: a49d16e2f90aa8046b60d1df62a6c507, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

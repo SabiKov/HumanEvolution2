@@ -29,7 +29,7 @@ public class HealthBarController : MonoBehaviour, IHealthBarController
     }
 
     /// <summary>
-    /// Set slider position
+    /// Set slider position, passing the current Health status which
     /// </summary>
     /// <param name="percentValue">percent value</param>
     public void SetHealth(float percentValue)
@@ -46,8 +46,10 @@ public class HealthBarController : MonoBehaviour, IHealthBarController
     {
         var maxValue = float.MinValue;
         var color = Color.white;
-        foreach(var option in ColoringOptions) {
-            if(percentValue > option.PercentValue && percentValue > maxValue) {
+        foreach (var option in ColoringOptions)
+        {
+            if (percentValue > option.PercentValue && percentValue > maxValue)
+            {
                 maxValue = option.PercentValue;
                 color = option.Color;
             }

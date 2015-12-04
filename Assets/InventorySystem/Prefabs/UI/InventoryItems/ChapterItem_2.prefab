@@ -58,9 +58,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemDescriptior:
-    Name: Chapter load
-    Description: Load next chapter.
-  ChapterType: 1
+    Name: Chapter2
+    Description: Well Done!!!                                                                            You
+      have learned the Renaissance lesson.                                            Are
+      you ready for the next lesson?
+  chapterType: 1
 --- !u!114 &11493032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,11 +180,25 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Name
-      value: Chapter load
+      value: Chapter2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ItemDescriptior.Description
-      value: Load next chapter.
+      value: Well Done!!!                                                                            You
+        have learned the Renaissance lesson.                                            Are
+        you ready for the next lesson?
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chapterType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ItemDescriptior.Description1
+      value: 'Well Done!!! You have learned the Renessi. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ItemDescriptior.Description2
+      value: sfsdfsdfsfsfsfsfsfsfffffffffffffffffffsfffffffffffsddddddddddddddddddddddddddddddddddddddddddddddddddddgfgddddddddddddddddddddf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

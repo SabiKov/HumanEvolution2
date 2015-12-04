@@ -37,8 +37,8 @@ public abstract class AbstractInventoryItemController : MonoBehaviour
     /// </summary>
     protected void DoDestory()
     {
-        if(PlayerController.Instance != null)
-            PlayerController.Instance.RemoveInventoryItem(this.gameObject);
+        if(PlayerController.instance != null)
+            PlayerController.instance.RemoveInventoryItem(this.gameObject);
 
         Destroy(this.gameObject);
     }

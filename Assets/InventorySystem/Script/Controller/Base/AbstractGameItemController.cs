@@ -13,30 +13,30 @@ public abstract class AbstractGameItemController : MonoBehaviour {
 
     private float animationTimer;
 
-    public float AnimationLiftingDistance = 2.0f;
-    public float RotationSpeed;
-    public float MovingSpeed;
+    public float animationLiftingDistance = 2.0f;
+    public float rotationSpeed;
+    public float movingSpeed;
 
-    public GameItemTypes GameItemType;
-    public GameItemAnimationTypes AnimationType;
+    public GameItemTypes gameItemType;
+    public GameItemAnimationTypes animationType;
 
     public void Start()
     {
         this.originalYPosition = this.gameObject.transform.position.y;
-        this.targetYPosition = this.originalYPosition - AnimationLiftingDistance;
+        this.targetYPosition = this.originalYPosition - animationLiftingDistance;
     }
 
     public void Update()
     {
-        if(this.AnimationType == GameItemAnimationTypes.NONE)
+        if(this.animationType == GameItemAnimationTypes.NONE)
             return;
 
         var deltaT = Time.deltaTime;
-        if (this.AnimationType == GameItemAnimationTypes.ANIM_ROTATE)
+        if (this.animationType == GameItemAnimationTypes.ANIM_ROTATE)
             this.StepAnimationRotation(deltaT);
-        else if (this.AnimationType == GameItemAnimationTypes.ANIM_LIFT)
+        else if (this.animationType == GameItemAnimationTypes.ANIM_LIFT)
             this.StepAnimationLifting(deltaT);
-        else if(this.AnimationType == GameItemAnimationTypes.BOTH) {
+        else if(this.animationType == GameItemAnimationTypes.BOTH) {
             this.StepAnimationRotation(deltaT);
             this.StepAnimationLifting(deltaT);
         }
@@ -49,13 +49,13 @@ public abstract class AbstractGameItemController : MonoBehaviour {
     private void StepAnimationLifting(float deltaT)
     {
         var pos = this.transform.position;
-        pos.y = Mathf.Lerp(pos.y, this.targetYPosition, deltaT * this.MovingSpeed);
+        pos.y = Mathf.Lerp(pos.y, this.targetYPosition, deltaT * this.movingSpeed);
         this.transform.position = pos;
 
         var distance = Mathf.Abs(targetYPosition - this.transform.position.y);
         if(distance <= 0.02f) {
             isUp = !isUp;
-            targetYPosition = (isUp) ? this.originalYPosition + AnimationLiftingDistance : this.originalYPosition - AnimationLiftingDistance;
+            targetYPosition = (isUp) ? this.originalYPosition + animationLiftingDistance : this.originalYPosition - animationLiftingDistance;
         }
     }
 
@@ -65,7 +65,7 @@ public abstract class AbstractGameItemController : MonoBehaviour {
     /// <param name="deltaT"></param>
     private void StepAnimationRotation(float deltaT)
     {
-        this.gameObject.transform.Rotate(Vector3.up, deltaT * RotationSpeed);
+        this.gameObject.transform.Rotate(Vector3.up, deltaT * rotationSpeed);
     }
 
 
@@ -85,7 +85,7 @@ public abstract class AbstractGameItemController : MonoBehaviour {
     /// </summary>
     protected virtual void FireItemEffect()
     {
-        Debug.Log("Abstract game item is fired!");
+  //      Debug.Log("Abstract game item is fired!");
         this.DoDestroy();
     }
 }

@@ -2,12 +2,12 @@
 
 public class InventoryGameItemController : AbstractGameItemController {
 
-    public GameObject InventoryItem;
+    public GameObject inventoryItem;
 
     protected override void FireItemEffect()
     {
-        if (PlayerController.Instance != null && this.InventoryItem != null)
-            PlayerController.Instance.AddInventoryItem(InventoryItem);
+        if (PlayerController.instance != null && this.inventoryItem != null)
+            PlayerController.instance.AddInventoryItem(inventoryItem);
 
         base.DoDestroy();
     }

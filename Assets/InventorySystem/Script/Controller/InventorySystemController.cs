@@ -40,20 +40,20 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// Spacing: padding value of item, but x and y values are used for calculation
     /// </summary>
     [Header("Panel Settings")]
-    public Vector2 ItemSize = new Vector2(5, 5);
-    public Vector2 Spacing = new Vector2(0.0f, 0.0f);
+    public Vector2 itemSize = new Vector2(5, 5);
+    public Vector2 spacing = new Vector2(0.0f, 0.0f);
 
     /// <summary>
     /// Declare Slot prefab 
     /// </summary>
     [Header("Item Settings")]
-    public GameObject InventorySlotItem;
+    public GameObject inventorySlotItem;
 
     /// <summary>
     /// Declare the fade in/out animation speed
     /// </summary>
     [Header("Animation Settings")]
-    public float AnimationSpeed = 1.0f;
+    public float animationSpeed = 1.0f;
 
     // Use this for initialization
     private void Start()
@@ -80,7 +80,8 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
         if(panelRect == null)
             return;
 
-        this.layoutGroup.cellSize = new Vector2((panelRect.rect.width / ItemSize.x) - (Spacing.x * ItemSize.x), (panelRect.rect.height / ItemSize.y) - (Spacing.y * ItemSize.y));
+        this.layoutGroup.cellSize = new Vector2((panelRect.rect.width / itemSize.x) - (spacing.x * itemSize.x),
+                                                (panelRect.rect.height / itemSize.y) - (spacing.y * itemSize.y));
     }
 
     /// <summary>
@@ -88,11 +89,11 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// </summary>
     private void PopulateSlots()
     {
-        if(this.InventorySlotItem == null)
+        if(this.inventorySlotItem == null)
             return;
 
-        for(int i = 0; i < ItemSize.x * ItemSize.y; i++) {
-            var instance = Instantiate(this.InventorySlotItem);
+        for(int i = 0; i < itemSize.x * itemSize.y; i++) {
+            var instance = Instantiate(this.inventorySlotItem);
             instance.transform.SetParent(this.transform);
             instance.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
@@ -135,7 +136,7 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// <param name="deltaT">time value</param>
     private void StepOpeningAnimation(float deltaT)
     {
-        var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, 1.1f, deltaT * AnimationSpeed);
+        var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, 1.1f, deltaT * animationSpeed);
         this.canvasGroup.alpha = newAlpha;
 
         if(newAlpha >= 1.0f) {
@@ -150,7 +151,7 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     /// <param name="deltaT">time value</param>
     private void StepClosingAnimation(float deltaT)
     {
-        var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, -0.1f, deltaT * AnimationSpeed);
+        var newAlpha = Mathf.SmoothStep(this.canvasGroup.alpha, -0.1f, deltaT * animationSpeed);
         this.canvasGroup.alpha = newAlpha;
 
         if(newAlpha <= 0.0f) {
@@ -167,7 +168,6 @@ public class InventorySystemController : MonoBehaviour, IInventorySystemControll
     {
         return inventoryItems;
     }
-
 
     /// <summary>
     /// Add item to inventory

@@ -1,48 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &161116
+--- !u!1 &150822
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 483174}
-  - 33: {fileID: 3352544}
-  - 23: {fileID: 2393040}
-  - 95: {fileID: 9592516}
-  - 65: {fileID: 6593784}
-  - 114: {fileID: 11436742}
+  - 4: {fileID: 441248}
+  - 33: {fileID: 3373530}
+  - 23: {fileID: 2384572}
+  - 95: {fileID: 9569372}
+  - 65: {fileID: 6566726}
+  - 114: {fileID: 11489660}
   m_Layer: 0
-  m_Name: Chapter_Scene_3
-  m_TagString: InventoryItem
+  m_Name: Health
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &483174
+--- !u!4 &441248
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 131.8862, y: 1.05999994, z: 58.5003853}
+  m_GameObject: {fileID: 150822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.41264343, y: .54599905, z: -14.1229095}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2393040
+--- !u!23 &2384572
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
+  m_GameObject: {fileID: 150822}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4cc0a2a3eff838148ab1b5d0f66cbccc, type: 2}
+  - {fileID: 2100000, guid: c831c7cfc6bb4f54bbd679503af8be78, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -56,34 +56,34 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3352544
+--- !u!33 &3373530
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
-  m_Mesh: {fileID: 4300000, guid: ae38f96e1852a684fb28c1bfd5d6336d, type: 3}
---- !u!65 &6593784
+  m_GameObject: {fileID: 150822}
+  m_Mesh: {fileID: 4300000, guid: 8533fb1b792ad9b4dacdd0e3350760cf, type: 3}
+--- !u!65 &6566726
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
+  m_GameObject: {fileID: 150822}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .00827713031, y: .0225175153, z: .017061891}
+  m_Size: {x: .00883343164, y: .0116867777, z: .00883343443}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9592516
+--- !u!95 &9569372
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
+  m_GameObject: {fileID: 150822}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ae38f96e1852a684fb28c1bfd5d6336d, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 8533fb1b792ad9b4dacdd0e3350760cf, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -92,23 +92,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11436742
+--- !u!114 &11489660
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161116}
+  m_GameObject: {fileID: 150822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfbb06c7449a444fa93ec4d7819e5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationLiftingDistance: 2
-  RotationSpeed: 10
-  MovingSpeed: 0
-  GameItemType: 0
-  AnimationType: 0
-  InventoryItem: {fileID: 199080, guid: 18bb14b9e1a9f094ca8c54c4bacf9393, type: 2}
+  animationLiftingDistance: .300000012
+  rotationSpeed: 15
+  movingSpeed: 6
+  gameItemType: 0
+  animationType: 2
+  inventoryItem: {fileID: 199080, guid: 332cbba82690900429b62d812cb13261, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -117,10 +117,26 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: InventoryItem
-      value: 
-      objectReference: {fileID: 199080, guid: 18bb14b9e1a9f094ca8c54c4bacf9393, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animationLiftingDistance
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rotationSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: movingSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animationType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 161116}
+  m_RootGameObject: {fileID: 150822}
   m_IsPrefabParent: 1

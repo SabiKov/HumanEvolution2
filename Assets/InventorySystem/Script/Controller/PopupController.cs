@@ -14,22 +14,22 @@ public class PopupController : MonoBehaviour {
     private CanvasGroup canvasGroup;
 
 
-    public static PopupController Instance;
+    public static PopupController instance;
 
-    public Text InfoText;
-    public Button OkButton;
-    public Button CancelButton;
+    public Text infoText;
+    public Button okButton;
+    public Button cancelButton;
 
 
     public void Awake()
     {
-        if(Instance == null)
-            Instance = this;
+        if(instance == null)
+            instance = this;
 
-        if (OkButton != null)
-            OkButton.onClick.AddListener(OnOkButtonClicked);
-        if (CancelButton != null)
-            CancelButton.onClick.AddListener(OnCancelButtonClicked);
+        if (okButton != null)
+            okButton.onClick.AddListener(OnOkButtonClicked);
+        if (cancelButton != null)
+            cancelButton.onClick.AddListener(OnCancelButtonClicked);
 
         this.canvasGroup = this.gameObject.GetComponent<CanvasGroup>();
 
@@ -57,8 +57,8 @@ public class PopupController : MonoBehaviour {
 
     public void ShowPopup(string message, UnityAction yesCallback = null, UnityAction noCallback = null)
     {
-        if(InfoText != null)
-            InfoText.text = message;
+        if(infoText != null)
+            infoText.text = message;
 
         this.yesCallback = yesCallback;
         this.noCallback = noCallback;

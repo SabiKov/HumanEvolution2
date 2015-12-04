@@ -67,7 +67,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 0 %
 --- !u!114 &11427766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35998dc34fdf454f8da5a2ce236fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 11402514}
+  scoreText: {fileID: 11402514}
 --- !u!114 &11448068
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,7 +10,12 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// Instantiate PlayerModel class
     /// </summary>
     private PlayerModel playerModel;
-    private int scoreCarryOn;
+
+    /// <summary>
+    /// Holds name of the game over scene
+    /// </summary>
+    private const string DEAD_END = "GameOver";
+    private const int MAX_SCORE = 100;
 
     /// <summary>
     /// Instantiate the interfaces
@@ -22,23 +27,22 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     /// <summary>
     /// Singleton
     /// </summary>
-    public static IPlayerController Instance;
+    public static IPlayerController instance;
 
     /// <summary>
     /// Create public prefab slot
     /// </summary>
-    public GameObject InventoryPanel;
-    public GameObject HealthPanel;
-    public GameObject ScorePanel;
+    public GameObject inventoryPanel;
+    public GameObject healthPanel;
+    public GameObject scorePanel;
 
     /// <summary>
     /// Initializing before the scene starts
     /// </summary>
     public void Awake()
     {
-        Instance = this;
+        instance = this;
         this.Init();
-        DontDestroyOnLoad(ScorePanel);
     }
 
     /// <summary>
@@ -48,14 +52,14 @@ public class PlayerController : MonoBehaviour, IPlayerController {
     {
         this.playerModel = new PlayerModel();
 
-        if (this.InventoryPanel != null)
-            this.inventorySystem = this.InventoryPanel.GetComponent<IInventorySystemController>();
+        if (this.inventoryPanel != null)
+            this.inventorySystem = this.inventoryPanel.GetComponent<IInventorySystemController>();
 
-        if (this.HealthPanel != null)
-            this.healtBarSystem = this.HealthPanel.GetComponent<IHealthBarController>();
+        if (this.healthPanel != null)
+            this.healtBarSystem = this.healthPanel.GetComponent<IHealthBarController>();
 
-        if (this.ScorePanel != null)
-            this.scoreSystem = this.ScorePanel.GetComponent<IScorePanelController>();
+        if (this.scorePanel != null)
+            this.scoreSystem = this.scorePanel.GetComponent<IScorePanelController>();
     }
 
     /// <summary>
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour, IPlayerController {
 
         var itemScript = item.gameObject.GetComponent<AbstractGameItemController>();
 
-        Debug.Log("Player Controller item" + itemScript);
+        Debug.Log("Player Controller item: " + itemScript);
         if (itemScript == null)
             return;
 
@@ -86,6 +90,12 @@ public class PlayerController : MonoBehaviour, IPlayerController {
             return;
 
         this.playerModel.Health = (int)Mathf.Clamp(this.playerModel.Health - amount, 0.0f, PlayerModel.MAX_HEALTH);
+  //      Debug.Log("Current Player Health: " + this.playerModel.Health);
+        
+        // When the player's health 0, then game over
+        if (this.playerModel.Health == 0)
+             Application.LoadLevel(DEAD_END);
+
         this.UpdateHealthBar();
     }
 
@@ -100,8 +110,18 @@ public class PlayerController : MonoBehaviour, IPlayerController {
 
         this.playerModel.Score += value;
 
+        // Make sure score can't get more than 100 %
         if (scoreSystem != null)
-            scoreSystem.UpdateScoreText(this.playerModel.Score);
+        {
+            if (this.playerModel.Score > 100)
+            {
+                this.playerModel.Score = MAX_SCORE;
+                scoreSystem.UpdateScoreText(this.playerModel.Score);
+            }
+            else {
+                scoreSystem.UpdateScoreText(this.playerModel.Score);
+            }
+        }
     }
 
     public void HealPlayer(int amount)
