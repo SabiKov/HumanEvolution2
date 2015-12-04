@@ -97,4 +97,5 @@ public class PlayerScene2 : MonoBehaviour
 		json[0]["playerLearned"][0][topic].Value = "True";
 		File.WriteAllText(Environment.CurrentDirectory + "/Assets/Resources/JSON/JSONPlayer.json", json.ToString());
 	}
+
 }

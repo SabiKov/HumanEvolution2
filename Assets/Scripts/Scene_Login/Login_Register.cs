@@ -15,7 +15,7 @@ public class Login_Register : MonoBehaviour {
 	//boolen veriable to check if a user is registered 
 	private bool register = false;
 	private int id;
-	PlayerData player = new PlayerData();
+//	PlayerData player = new PlayerData();
 	SaveSystem syst = new SaveSystem();
 
 	public void setUser(string user){
