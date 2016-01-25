@@ -1,6 +1,6 @@
 #Unity Game Project
-Group: 1B; The build version is available at 
-####################################################IMPORTANT####################################################################
+Group: 1B; The build version is available at git@github.com:SabiKov/HumanEvolution2_Builtv_02_Doc.git
+####################################################IMPORTANT##################################################################
 The primary goal is to implement a complex C# based code with adopting an Object-Oriantated Design approach. As a result, the game includes the following two important features (source codes).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Author: Szabolcs Kovacs
@@ -10,6 +10,7 @@ Author: Daragh Walshe
 The second is the AI-NPC spawner system. The main feature of this is the spawned game objects (NPC) are automatized. 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Author: Dave Breen
+AI-NPC State: (it doesn't work on the build version)
 
 Contributors: 
  Daragh Walshe B00064428,
