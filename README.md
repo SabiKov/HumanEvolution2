@@ -1,11 +1,20 @@
 #Unity Game Project
-Group: 1B;
+Group: 1B; The build version is available at 
+####################################################IMPORTANT####################################################################
+The primary goal is to implement a complex C# based code with adopting an Object-Oriantated Design approach. As a result, the game includes the following two important features (source codes).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Author: Szabolcs Kovacs
+The first one is the inventory system which consists of the following assests: inventory bag, game item object, healt bar panel, score panel, level transitions mechanism between scenes. The primary goals was to demonstrate a C# based source code. It is based on Model-View-Controller design pattern with including base classes (interface and abstract classes). Each "game object" has its own controller.cs class thus the code is expandable in other words more features can be implemented easily.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Author: Daragh Walshe 
+The second is the AI-NPC spawner system. The main feature of this is the spawned game objects (NPC) are automatized. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Author: Dave Breen
 
 Contributors: 
  Daragh Walshe B00064428,
  Szabolcs Kovacs B00063874,
  Dave Breen B00064153,
- Bernard Jose B00063723,
  
  Breif Summary of the Game
  
