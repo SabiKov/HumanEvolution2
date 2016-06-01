@@ -10,7 +10,7 @@ Author: Daragh Walshe
 The second is the AI-NPC spawner system. The main feature of this is the spawned game objects (NPC) are automatized. 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Author: Dave Breen
-AI-NPC State: (it doesn't work on the build version)
+AI-NPC State Machine: The finite state machine to control NPC AI using C# programming paradigm.
 
 Contributors: 
  Daragh Walshe B00064428,
